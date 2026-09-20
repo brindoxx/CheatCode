@@ -117,17 +117,18 @@
     return container;
   }
 
-  // Ignored common labels/texts
+  // Ignored common labels/texts and badge strings
   const IGNORED_STRINGS = new Set([
     'easy', 'medium', 'hard', 'solved', 'unsolved', 'revision', 'notes',
     'status', 'problem', 'practice', 'editorial', 'submission', 'bookmark',
     'youtube', 'code', 'c++', 'java', 'python', 'javascript', 'submit', 'run',
-    'dashboard', 'planly', 'prep hub', 'community', 'blogs', 'codespace'
+    'dashboard', 'planly', 'prep hub', 'community', 'blogs', 'codespace',
+    'core', 'must do', 'starred', 'optional', 'faq', 'faqs', 'article', 'video'
   ]);
 
   function isIgnoredText(text) {
     const t = text.trim().toLowerCase();
-    if (t.length < 3) return true;
+    if (t.length < 2) return true;
     if (IGNORED_STRINGS.has(t)) return true;
     if (/^\d+(\.\d+)?%$/.test(t)) return true; // Accuracy percentage
     return false;
@@ -136,43 +137,68 @@
   function processRow(row) {
     if (row.hasAttribute('data-cheatcode-injected')) return;
 
-    // Strategy 1: Find link or title element inside row
+    // Check if we already injected our badge container inside this row
+    if (row.querySelector('.cheatcode-badge-container')) {
+      row.setAttribute('data-cheatcode-injected', 'true');
+      return;
+    }
+
     const titleCandidates = row.querySelectorAll('a, p, span, h3, h4');
-    let titleEl = null;
-    let problemTitle = '';
+    let matchedEl = null;
+    let matchInfo = null;
 
     for (const el of titleCandidates) {
-      // Don't inspect our own elements or badges
       if (el.closest('.cheatcode-badge-container')) continue;
-      
-      const txt = el.textContent.trim();
-      if (!isIgnoredText(txt) && txt.length >= 3 && txt.length <= 120) {
-        // Prefer anchors with problem URLs or elements with meaningful text
-        if (el.tagName === 'A' || /^[A-Z0-9]/.test(txt)) {
-          titleEl = el;
-          problemTitle = txt;
-          break;
+
+      // Strategy A: If element has an href, extract problem slug
+      const href = el.getAttribute('href');
+      if (href) {
+        const slugMatch = href.match(/(?:problems|data-structure)\/([a-z0-9-_]+)/i);
+        if (slugMatch && slugMatch[1]) {
+          const slugText = slugMatch[1].replace(/[-_]+/g, ' ');
+          const found = matcher.find(slugText);
+          if (found) {
+            matchedEl = el;
+            matchInfo = found;
+            break;
+          }
+        }
+      }
+
+      // Strategy B: Inspect element textContent
+      const rawTxt = el.textContent.trim();
+      if (rawTxt && !isIgnoredText(rawTxt) && rawTxt.length >= 3 && rawTxt.length <= 140) {
+        // Strip out trailing or leading status/badge tags like "Core", "Solved", "Unsolved", etc.
+        const cleanedTxt = rawTxt
+          .replace(/\s*\b(core|must do|starred|revision|optional|notes|faqs?|solved|unsolved)\b\s*$/gi, '')
+          .replace(/^\s*\b(core|must do|starred|revision|optional|notes|faqs?|solved|unsolved)\b\s*/gi, '')
+          .replace(/\s+/g, ' ')
+          .trim();
+
+        if (cleanedTxt.length >= 3) {
+          const found = matcher.find(cleanedTxt);
+          if (found) {
+            matchedEl = el;
+            matchInfo = found;
+            break;
+          }
         }
       }
     }
 
-    if (!titleEl || !problemTitle) return;
-
-    const matchInfo = matcher.find(problemTitle);
-    if (!matchInfo) return;
+    if (!matchedEl || !matchInfo) return;
 
     const badgeContainer = createBadgeContainer(matchInfo);
     if (!badgeContainer) return;
 
     row.setAttribute('data-cheatcode-injected', 'true');
 
-    // Place container right next to the title or inside the title's parent
-    if (titleEl.parentNode) {
-      // If titleEl is an anchor or inline span, insert right after it
-      if (titleEl.nextSibling) {
-        titleEl.parentNode.insertBefore(badgeContainer, titleEl.nextSibling);
+    // Place container right next to the matched title element
+    if (matchedEl.parentNode) {
+      if (matchedEl.nextSibling) {
+        matchedEl.parentNode.insertBefore(badgeContainer, matchedEl.nextSibling);
       } else {
-        titleEl.parentNode.appendChild(badgeContainer);
+        matchedEl.parentNode.appendChild(badgeContainer);
       }
     } else {
       row.appendChild(badgeContainer);

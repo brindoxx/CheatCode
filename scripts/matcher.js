@@ -66,9 +66,10 @@
     clean = clean.replace(/^(\d+[\.\:\-]\s*)/, '');
     clean = clean.replace(/^([ivxlcdm]+[\.\:\-]\s*)/i, '');
 
-    // Remove common suffixes: "[Medium]", "(Leetcode)", "(GFG)", "Tutorial", "Editorial"
+    // Remove common suffixes and badge tags: "[Medium]", "(Leetcode)", "Core", "FAQ", "Editorial"
     clean = clean.replace(/\s*(\(|\[)(leetcode|gfg|codechef|interviewbit|easy|medium|hard|editorial)(\)|\])/gi, '');
     clean = clean.replace(/\s*\|\s*takeuforward.*$/i, '');
+    clean = clean.replace(/\s*\b(core|must do|starred|revision|optional|notes|faqs?|solved|unsolved)\b\s*$/gi, '');
 
     // Strip punctuation and reduce whitespace
     let alphaKey = clean
@@ -77,6 +78,9 @@
       .replace(/[^a-z0-9]/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
+
+    // Strip trailing tags that may have had punctuation removed
+    alphaKey = alphaKey.replace(/\s*\b(core|must do|starred|revision|optional|notes|faqs?|solved|unsolved)\b\s*$/g, '').trim();
 
     // Canonicalize standard DSA terminology differences between TUF, LeetCode, and GFG
     alphaKey = alphaKey
@@ -92,9 +96,10 @@
       .replace(/\s+/g, ' ')
       .trim();
 
-    // Core key removes common generic filler words like "problem", "algorithm", "implementation"
+    // Core key removes common generic filler words like "problem", "algorithm", "check for", "check if", prepositions
     const coreKey = alphaKey
-      .replace(/\b(problem|problems|algorithm|algorithms|approach|method|implementation)\b/g, '')
+      .replace(/\b(problem|problems|algorithm|algorithms|approach|method|implementation|check for|check if|print|find)\b/g, '')
+      .replace(/\b(in|of|a|an|the)\b/g, '')
       .replace(/\s+/g, ' ')
       .trim();
 
@@ -122,12 +127,20 @@
       [/\blist\b/g, 'll'],
       [/\blinked list\b/g, 'list'],
       [/\blist\b/g, 'linked list'],
+      [/\bdll\b/g, 'doubly linked list'],
       [/\bbs\b/g, 'binary search'],
       [/\bbinary search\b/g, 'bs'],
       [/\bbt\b/g, 'binary tree'],
       [/\bbinary tree\b/g, 'bt'],
       [/\bbst\b/g, 'binary search tree'],
-      [/\bbinary search tree\b/g, 'bst']
+      [/\bbinary search tree\b/g, 'bst'],
+      [/\blca\b/g, 'lowest common ancestor'],
+      [/\blowest common ancestor\b/g, 'lca'],
+      [/\blcs\b/g, 'longest common subsequence'],
+      [/\blis\b/g, 'longest increasing subsequence'],
+      [/\bmcm\b/g, 'matrix chain multiplication'],
+      [/\bmst\b/g, 'minimum spanning tree'],
+      [/\brating\b/g, 'rank']
     ];
 
     for (const [regex, replacement] of mappings) {
@@ -135,6 +148,33 @@
         vars.push(text.replace(regex, replacement));
       }
     }
+
+    // Simultaneously expand all acronyms to create fully-expanded variation
+    let fullyExpanded = text;
+    for (const [regex, replacement] of mappings) {
+      fullyExpanded = fullyExpanded.replace(regex, replacement);
+    }
+    if (fullyExpanded !== text) {
+      vars.push(fullyExpanded);
+    }
+
+    // Handle "or" variations (e.g. "Zig Zag or Spiral Traversal" -> ["Zig Zag Traversal", "Spiral Traversal"])
+    if (text.includes(' or ')) {
+      const parts = text.split(' or ');
+      if (parts.length === 2) {
+        const p1 = parts[0].trim();
+        const p2 = parts[1].trim();
+        const p2Words = p2.split(' ');
+        const lastWord = p2Words[p2Words.length - 1];
+        if (lastWord && !p1.endsWith(lastWord)) {
+          vars.push(`${p1} ${lastWord}`);
+        } else {
+          vars.push(p1);
+        }
+        vars.push(p2);
+      }
+    }
+
     return vars;
   }
 
@@ -167,7 +207,7 @@
           tokens: new Set(norm.coreKey.split(' ').filter(t => t.length > 1))
         };
 
-        // 1. Index primary canonical title first (highest priority)
+        // 1. Primary Title (highest priority)
         const keysToIndex = [
           ...numberWordVariations(norm.key),
           ...numberWordVariations(norm.coreKey)
@@ -176,6 +216,14 @@
         for (const k of keysToIndex) {
           if (!this.exactIndex.has(k)) {
             this.exactIndex.set(k, entry);
+          }
+        }
+
+        // Index truncated forms without trailing "of Binary Tree" etc. (e.g. "Boundary Traversal of Binary Tree" -> "Boundary Traversal")
+        const strippedTree = norm.coreKey.replace(/\b(binary tree|binary search tree|bst|bt|linked list|ll)\b/g, '').trim();
+        if (strippedTree && strippedTree.length >= 6) {
+          if (!this.exactIndex.has(strippedTree)) {
+            this.exactIndex.set(strippedTree, entry);
           }
         }
 
@@ -235,110 +283,92 @@
         ...numberWordVariations(norm.coreKey)
       ];
 
-      let matchedEntry = null;
-      let matchType = '';
-
       for (const q of queryVariations) {
         if (this.exactIndex.has(q)) {
-          matchedEntry = this.exactIndex.get(q);
-          matchType = 'exact';
-          break;
+          const matchedEntry = this.exactIndex.get(q);
+          const lcDirect = isValidDirectProblemUrl(matchedEntry.leetcode, 'leetcode') ? matchedEntry.leetcode : null;
+          const gfgDirect = isValidDirectProblemUrl(matchedEntry.gfg, 'gfg') ? matchedEntry.gfg : null;
+          if (!lcDirect && !gfgDirect) return null;
+          return { ...matchedEntry, leetcode: lcDirect, gfg: gfgDirect, matchType: 'exact' };
         }
       }
 
       // 2. Substring matching (ranked by minimal length delta to prevent false positives)
-      if (!matchedEntry) {
-        let bestSubMatch = null;
-        let minLengthDelta = Infinity;
+      let bestSubMatch = null;
+      let minLengthDelta = Infinity;
 
-        for (const entry of this.tokenIndex) {
-          const matchFound = 
-            entry.coreKey.includes(norm.coreKey) || 
-            norm.coreKey.includes(entry.coreKey) ||
-            entry.normKey.includes(norm.key) ||
-            norm.key.includes(entry.normKey);
+      for (const entry of this.tokenIndex) {
+        const matchFound = 
+          entry.coreKey.includes(norm.coreKey) || 
+          norm.coreKey.includes(entry.coreKey) ||
+          entry.normKey.includes(norm.key) ||
+          norm.key.includes(entry.normKey);
 
-          if (matchFound) {
-            const delta = Math.abs(entry.normKey.length - norm.key.length);
-            if (delta < minLengthDelta) {
-              minLengthDelta = delta;
-              bestSubMatch = entry;
-            }
+        if (matchFound) {
+          const delta = Math.abs(entry.normKey.length - norm.key.length);
+          if (delta < minLengthDelta) {
+            minLengthDelta = delta;
+            bestSubMatch = entry;
           }
-        }
-
-        if (bestSubMatch && minLengthDelta <= 18) {
-          matchedEntry = bestSubMatch;
-          matchType = 'substring';
         }
       }
 
-      // 3. Token Subset Matching (e.g. "Zigzag Traversal" inside "binary tree zigzag level order traversal")
-      if (!matchedEntry) {
-        const searchTokens = norm.coreKey.split(' ').filter(t => t.length > 2);
-        if (searchTokens.length >= 2) {
-          for (const entry of this.tokenIndex) {
-            let allPresent = true;
-            for (const token of searchTokens) {
-              if (!entry.tokens.has(token)) {
-                allPresent = false;
-                break;
-              }
-            }
-            if (allPresent) {
-              matchedEntry = entry;
-              matchType = 'token-subset';
+      if (bestSubMatch && minLengthDelta <= 20) {
+        const lcDirect = isValidDirectProblemUrl(bestSubMatch.leetcode, 'leetcode') ? bestSubMatch.leetcode : null;
+        const gfgDirect = isValidDirectProblemUrl(bestSubMatch.gfg, 'gfg') ? bestSubMatch.gfg : null;
+        if (lcDirect || gfgDirect) {
+          return { ...bestSubMatch, leetcode: lcDirect, gfg: gfgDirect, matchType: 'substring' };
+        }
+      }
+
+      // 3. Token Subset Matching (e.g. all search tokens are contained in problem's tokens)
+      const searchTokens = norm.coreKey.split(' ').filter(t => t.length > 2);
+      if (searchTokens.length >= 2) {
+        for (const entry of this.tokenIndex) {
+          let allPresent = true;
+          for (const token of searchTokens) {
+            if (!entry.tokens.has(token)) {
+              allPresent = false;
               break;
+            }
+          }
+          if (allPresent) {
+            const lcDirect = isValidDirectProblemUrl(entry.leetcode, 'leetcode') ? entry.leetcode : null;
+            const gfgDirect = isValidDirectProblemUrl(entry.gfg, 'gfg') ? entry.gfg : null;
+            if (lcDirect || gfgDirect) {
+              return { ...entry, leetcode: lcDirect, gfg: gfgDirect, matchType: 'token-subset' };
             }
           }
         }
       }
 
       // 4. Token Overlap / Fuzzy Match
-      if (!matchedEntry) {
-        const searchTokens = norm.coreKey.split(' ').filter(t => t.length > 2);
-        let bestTokenMatch = null;
-        let highestScore = 0;
+      let bestTokenMatch = null;
+      let highestScore = 0;
 
-        if (searchTokens.length > 0) {
-          for (const entry of this.tokenIndex) {
-            let commonCount = 0;
-            for (const token of searchTokens) {
-              if (entry.tokens.has(token)) commonCount++;
-            }
-            const score = (2 * commonCount) / (searchTokens.length + entry.tokens.size);
-            if (score > highestScore && score >= 0.5) {
-              highestScore = score;
-              bestTokenMatch = entry;
-            }
+      if (searchTokens.length > 0) {
+        for (const entry of this.tokenIndex) {
+          let commonCount = 0;
+          for (const token of searchTokens) {
+            if (entry.tokens.has(token)) commonCount++;
+          }
+          const score = (2 * commonCount) / (searchTokens.length + entry.tokens.size);
+          if (score > highestScore && score >= 0.5) {
+            highestScore = score;
+            bestTokenMatch = entry;
           }
         }
+      }
 
-        if (bestTokenMatch) {
-          matchedEntry = bestTokenMatch;
-          matchType = 'fuzzy';
+      if (bestTokenMatch) {
+        const lcDirect = isValidDirectProblemUrl(bestTokenMatch.leetcode, 'leetcode') ? bestTokenMatch.leetcode : null;
+        const gfgDirect = isValidDirectProblemUrl(bestTokenMatch.gfg, 'gfg') ? bestTokenMatch.gfg : null;
+        if (lcDirect || gfgDirect) {
+          return { ...bestTokenMatch, leetcode: lcDirect, gfg: gfgDirect, matchType: 'fuzzy' };
         }
       }
 
-      // If problem is not found in database, do not generate fallback search URLs
-      if (!matchedEntry) {
-        return null;
-      }
-
-      const lcDirect = isValidDirectProblemUrl(matchedEntry.leetcode, 'leetcode') ? matchedEntry.leetcode : null;
-      const gfgDirect = isValidDirectProblemUrl(matchedEntry.gfg, 'gfg') ? matchedEntry.gfg : null;
-
-      // If the problem does not exist on either platform, do not mention it
-      if (!lcDirect && !gfgDirect) {
-        return null;
-      }
-
-      return {
-        ...matchedEntry,
-        leetcode: lcDirect,
-        gfg: gfgDirect,
-        matchType: matchType
-      };
+      return null;
     }
   }
 

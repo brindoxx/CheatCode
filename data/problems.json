@@ -814,14 +814,23 @@
     "topic": "LinkedList - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/linked-list-cycle-ii/",
-    "gfg": "https://www.geeksforgeeks.org/problems/find-the-first-node-of-loop-in-linked-list--170645/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/find-the-first-node-of-loop-in-linked-list--170645/1",
+    "aliases": [
+      "Find the starting point of Loop in LinkedList",
+      "Starting point of loop in LL",
+      "Linked List Cycle II"
+    ]
   },
   {
     "title": "Length of Loop in Linked List",
     "topic": "LinkedList - Medium",
     "difficulty": "Easy",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/find-length-of-loop/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/find-length-of-loop/1",
+    "aliases": [
+      "Find the length of Loop in LinkedList",
+      "Length of Loop in LL"
+    ]
   },
   {
     "title": "Check if LL is Palindrome",
@@ -856,7 +865,11 @@
     "topic": "LinkedList - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/sort-list/",
-    "gfg": "https://www.geeksforgeeks.org/problems/sort-a-linked-list/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/sort-a-linked-list/1",
+    "aliases": [
+      "Sort Linked List",
+      "Sort List"
+    ]
   },
   {
     "title": "Sort a LL of 0's 1's and 2's",
@@ -1531,21 +1544,35 @@
     "topic": "Binary Trees - Medium",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/height-of-binary-tree/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/height-of-binary-tree/1",
+    "aliases": [
+      "Height of Binary Tree",
+      "Height of BT",
+      "Max Depth of Binary Tree",
+      "Maximum Depth of BT"
+    ]
   },
   {
     "title": "Balanced Binary Tree",
     "topic": "Binary Trees - Medium",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/balanced-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/check-for-balanced-tree/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/check-for-balanced-tree/1",
+    "aliases": [
+      "Check for Balanced Binary Tree",
+      "Check if BT is balanced",
+      "Balanced BT"
+    ]
   },
   {
     "title": "Diameter of Binary Tree",
     "topic": "Binary Trees - Medium",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/diameter-of-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/diameter-of-binary-tree/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/diameter-of-binary-tree/1",
+    "aliases": [
+      "Diameter of BT"
+    ]
   },
   {
     "title": "Binary Tree Maximum Path Sum",
@@ -1559,7 +1586,12 @@
     "topic": "Binary Trees - Medium",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/same-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/determine-if-two-trees-are-identical/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/determine-if-two-trees-are-identical/1",
+    "aliases": [
+      "Check if two trees are identical",
+      "Check for Identical Trees",
+      "Identical Trees"
+    ]
   },
   {
     "title": "Binary Tree Zigzag Level Order Traversal",
@@ -1571,7 +1603,9 @@
       "Zig Zag Traversal",
       "Zig-Zag Traversal",
       "Zig Zag Traversal of Binary Tree",
-      "Zigzag Tree Traversal"
+      "Zigzag Tree Traversal",
+      "Zig Zag or Spiral Traversal",
+      "Spiral Traversal"
     ]
   },
   {
@@ -1579,77 +1613,135 @@
     "topic": "Binary Trees - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/boundary-of-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1",
+    "aliases": [
+      "Boundary Traversal",
+      "Tree Boundary Traversal",
+      "Boundary of Binary Tree"
+    ]
   },
   {
     "title": "Vertical Order Traversal of a Binary Tree",
     "topic": "Binary Trees - Medium",
     "difficulty": "Hard",
     "leetcode": "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/1",
+    "aliases": [
+      "Vertical Order Traversal",
+      "Vertical Traversal of Binary Tree",
+      "Vertical Traversal of a Binary Tree",
+      "Print a Binary Tree in Vertical Order"
+    ]
   },
   {
     "title": "Top View of Binary Tree",
     "topic": "Binary Trees - Medium",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1",
+    "aliases": [
+      "Top View of BT",
+      "Top View"
+    ]
   },
   {
     "title": "Bottom View of Binary Tree",
     "topic": "Binary Trees - Medium",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1",
+    "aliases": [
+      "Bottom view of BT",
+      "Bottom View of BT",
+      "Bottom View"
+    ]
   },
   {
     "title": "Right/Left View of Binary Tree",
     "topic": "Binary Trees - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/binary-tree-right-side-view/",
-    "gfg": "https://www.geeksforgeeks.org/problems/right-view-of-binary-tree/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/right-view-of-binary-tree/1",
+    "aliases": [
+      "Right/Left View of BT",
+      "Right View of BT",
+      "Left View of BT",
+      "Right View of Binary Tree",
+      "Left View of Binary Tree",
+      "Binary Tree Right Side View"
+    ]
   },
   {
     "title": "Symmetric Tree",
     "topic": "Binary Trees - Medium",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/symmetric-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/symmetric-tree/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/symmetric-tree/1",
+    "aliases": [
+      "Check for Symmetrical BT",
+      "Check for Symmetric Tree",
+      "Symmetric Binary Tree"
+    ]
   },
   {
     "title": "Root to Node Path in Binary Tree",
     "topic": "Binary Trees - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/binary-tree-paths/",
-    "gfg": "https://www.geeksforgeeks.org/problems/root-to-leaf-paths/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/root-to-leaf-paths/1",
+    "aliases": [
+      "Print root to leaf path in BT",
+      "Root to leaf path in BT",
+      "Root to Leaf Paths",
+      "Print root to leaf path in Binary Tree",
+      "Binary Tree Paths"
+    ]
   },
   {
     "title": "Lowest Common Ancestor of a Binary Tree",
     "topic": "Binary Trees - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-binary-tree/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-binary-tree/1",
+    "aliases": [
+      "LCA in BT",
+      "LCA of Binary Tree",
+      "Lowest Common Ancestor in Binary Tree",
+      "LCA in Binary Tree"
+    ]
   },
   {
     "title": "Maximum Width of Binary Tree",
     "topic": "Binary Trees - Hard",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/maximum-width-of-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/maximum-width-of-tree/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/maximum-width-of-tree/1",
+    "aliases": [
+      "Maximum Width of BT",
+      "Width of Binary Tree"
+    ]
   },
   {
     "title": "Children Sum Property in Binary Tree",
     "topic": "Binary Trees - Hard",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/children-sum-parent/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/children-sum-parent/1",
+    "aliases": [
+      "Check for Children Sum Property",
+      "Children Sum Parent"
+    ]
   },
   {
     "title": "All Nodes Distance K in Binary Tree",
     "topic": "Binary Trees - Hard",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/nodes-at-given-distance-in-binary-tree/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/nodes-at-given-distance-in-binary-tree/1",
+    "aliases": [
+      "Print all the Nodes at a distance of K in Binary Tree",
+      "Nodes at distance K in Binary Tree"
+    ]
   },
   {
     "title": "Burning Tree",
@@ -1663,28 +1755,42 @@
     "topic": "Binary Trees - Hard",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/count-complete-tree-nodes/",
-    "gfg": "https://www.geeksforgeeks.org/problems/count-number-of-nodes-in-a-binary-tree/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/count-number-of-nodes-in-a-binary-tree/1",
+    "aliases": [
+      "Count total Nodes in a COMPLETE Binary Tree"
+    ]
   },
   {
     "title": "Construct Binary Tree from Preorder and Inorder Traversal",
     "topic": "Binary Trees - Hard",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
-    "gfg": "https://www.geeksforgeeks.org/problems/construct-tree-1/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/construct-tree-1/1",
+    "aliases": [
+      "Construct BT from Preorder and Inorder",
+      "Construct Binary Tree from Preorder and Inorder"
+    ]
   },
   {
     "title": "Construct Binary Tree from Inorder and Postorder Traversal",
     "topic": "Binary Trees - Hard",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/",
-    "gfg": "https://www.geeksforgeeks.org/problems/tree-from-postorder-and-inorder/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/tree-from-postorder-and-inorder/1",
+    "aliases": [
+      "Construct BT from Inorder and Postorder",
+      "Construct Binary Tree from Inorder and Postorder"
+    ]
   },
   {
     "title": "Serialize and Deserialize Binary Tree",
     "topic": "Binary Trees - Hard",
     "difficulty": "Hard",
     "leetcode": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/serialize-and-deserialize-a-binary-tree/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/serialize-and-deserialize-a-binary-tree/1",
+    "aliases": [
+      "Serialize and De-serialize Binary Tree"
+    ]
   },
   {
     "title": "Morris Preorder / Inorder Traversal",
@@ -1698,7 +1804,11 @@
     "topic": "Binary Trees - Hard",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/flatten-binary-tree-to-linked-list/",
-    "gfg": "https://www.geeksforgeeks.org/problems/flatten-binary-tree-to-linked-list/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/flatten-binary-tree-to-linked-list/1",
+    "aliases": [
+      "Flatten Binary Tree to LinkedList",
+      "Flatten BT to LL"
+    ]
   },
   {
     "title": "Search in a Binary Search Tree",
@@ -1740,7 +1850,13 @@
     "topic": "BST",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
-    "gfg": "https://www.geeksforgeeks.org/problems/find-k-th-smallest-element-in-bst/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/find-k-th-smallest-element-in-bst/1",
+    "aliases": [
+      "Kth Smallest Element in BST",
+      "Kth Largest Element in BST",
+      "Find Kth Smallest Element in BST",
+      "Find Kth Largest Element in BST"
+    ]
   },
   {
     "title": "Validate Binary Search Tree",
@@ -1754,7 +1870,11 @@
     "topic": "BST",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-bst/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-bst/1",
+    "aliases": [
+      "LCA in BST",
+      "Lowest Common Ancestor in BST"
+    ]
   },
   {
     "title": "Construct Binary Search Tree from Preorder Traversal",
@@ -1992,7 +2112,11 @@
     "topic": "Graphs - Advanced",
     "difficulty": "Hard",
     "leetcode": "https://leetcode.com/problems/critical-connections-in-a-network/",
-    "gfg": "https://www.geeksforgeeks.org/problems/bridge-edge-in-graph/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/bridge-edge-in-graph/1",
+    "aliases": [
+      "Bridges in Graph",
+      "Critical Connections in a Network"
+    ]
   },
   {
     "title": "Articulation Point in Graph",
@@ -2181,7 +2305,10 @@
     "topic": "DP - Strings",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/longest-common-subsequence/",
-    "gfg": "https://www.geeksforgeeks.org/problems/longest-common-subsequence-1587115620/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/longest-common-subsequence-1587115620/1",
+    "aliases": [
+      "LCS"
+    ]
   },
   {
     "title": "Print Longest Common Subsequence",
@@ -2286,7 +2413,10 @@
     "topic": "DP - LIS",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/longest-increasing-subsequence/",
-    "gfg": "https://www.geeksforgeeks.org/problems/longest-increasing-subsequence-1587115620/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/longest-increasing-subsequence-1587115620/1",
+    "aliases": [
+      "LIS"
+    ]
   },
   {
     "title": "Largest Divisible Subset",
@@ -2321,7 +2451,10 @@
     "topic": "DP - Partition",
     "difficulty": "Hard",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1",
+    "aliases": [
+      "MCM"
+    ]
   },
   {
     "title": "Minimum Cost to Cut a Stick",
