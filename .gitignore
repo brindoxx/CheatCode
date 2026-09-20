@@ -18,3 +18,6 @@ __pycache__/
 # IDE
 .vscode/
 .idea/
+
+# Scratch & Temporary
+scratch/

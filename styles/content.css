@@ -5,7 +5,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-left: 10px;
+  margin-left: 8px;
   vertical-align: middle;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   user-select: none;
@@ -17,27 +17,32 @@
   align-items: center;
   gap: 5px;
   padding: 3px 8px;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.2;
   text-decoration: none !important;
   border-radius: 6px;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
   white-space: nowrap;
+  letter-spacing: 0.1px;
 }
 
 .cheatcode-btn svg {
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
   flex-shrink: 0;
 }
 
-/* LeetCode Button */
+.cheatcode-btn:active {
+  transform: translateY(0);
+}
+
+/* ═══════════════════ LeetCode Button (Light Mode) ═══════════════════ */
 .cheatcode-btn-leetcode {
   background: #ffffff;
-  color: #1a1a1a !important;
-  border: 1px solid #e2e8f0;
+  color: #1f2937 !important;
+  border: 1px solid #e5e7eb;
 }
 
 .cheatcode-btn-leetcode:hover {
@@ -45,14 +50,14 @@
   color: #ea580c !important;
   border-color: #fdba74;
   transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgba(234, 88, 12, 0.18);
+  box-shadow: 0 3px 8px rgba(234, 88, 12, 0.2);
 }
 
-/* GeeksforGeeks Button */
+/* ═══════════════════ GeeksforGeeks Button (Light Mode) ═══════════════════ */
 .cheatcode-btn-gfg {
   background: #ffffff;
-  color: #1a1a1a !important;
-  border: 1px solid #e2e8f0;
+  color: #1f2937 !important;
+  border: 1px solid #e5e7eb;
 }
 
 .cheatcode-btn-gfg:hover {
@@ -60,65 +65,99 @@
   color: #16a34a !important;
   border-color: #86efac;
   transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgba(22, 163, 74, 0.18);
+  box-shadow: 0 3px 8px rgba(22, 163, 74, 0.2);
 }
 
-/* Fallback Search Indicator */
-.cheatcode-btn-fallback {
-  opacity: 0.88;
-  font-style: italic;
-}
-
-/* Dark Mode Adaptation for TakeUForward */
-@media (prefers-color-scheme: dark), [data-theme='dark'], .dark {
+/* ═══════════════════ Dark Mode Adaptation (TakeUForward) ═══════════════════ */
+/* 1. OS-level dark theme */
+@media (prefers-color-scheme: dark) {
   .cheatcode-btn-leetcode {
-    background: #262626;
-    color: #f5f5f5 !important;
-    border-color: #404040;
+    background: #181920;
+    color: #e5e7eb !important;
+    border-color: rgba(255, 255, 255, 0.12);
   }
   .cheatcode-btn-leetcode:hover {
-    background: #431407;
-    color: #fb923c !important;
-    border-color: #ea580c;
-    box-shadow: 0 3px 8px rgba(234, 88, 12, 0.3);
+    background: #2a1b10;
+    color: #ffa116 !important;
+    border-color: rgba(255, 161, 22, 0.5);
+    box-shadow: 0 3px 10px rgba(255, 161, 22, 0.25);
   }
 
   .cheatcode-btn-gfg {
-    background: #262626;
-    color: #f5f5f5 !important;
-    border-color: #404040;
+    background: #181920;
+    color: #e5e7eb !important;
+    border-color: rgba(255, 255, 255, 0.12);
   }
   .cheatcode-btn-gfg:hover {
-    background: #052e16;
+    background: #0d2417;
     color: #4ade80 !important;
-    border-color: #22c55e;
-    box-shadow: 0 3px 8px rgba(34, 197, 94, 0.3);
+    border-color: rgba(34, 197, 94, 0.5);
+    box-shadow: 0 3px 10px rgba(34, 197, 94, 0.25);
   }
 }
 
-/* Floating Status Pill (Optional indicator) */
+/* 2. Class/Attribute based dark theme on TakeUForward */
+html.dark .cheatcode-btn-leetcode,
+body.dark .cheatcode-btn-leetcode,
+[data-theme='dark'] .cheatcode-btn-leetcode,
+.dark .cheatcode-btn-leetcode {
+  background: #181920;
+  color: #e5e7eb !important;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+html.dark .cheatcode-btn-leetcode:hover,
+body.dark .cheatcode-btn-leetcode:hover,
+[data-theme='dark'] .cheatcode-btn-leetcode:hover,
+.dark .cheatcode-btn-leetcode:hover {
+  background: #2a1b10;
+  color: #ffa116 !important;
+  border-color: rgba(255, 161, 22, 0.5);
+  box-shadow: 0 3px 10px rgba(255, 161, 22, 0.25);
+}
+
+html.dark .cheatcode-btn-gfg,
+body.dark .cheatcode-btn-gfg,
+[data-theme='dark'] .cheatcode-btn-gfg,
+.dark .cheatcode-btn-gfg {
+  background: #181920;
+  color: #e5e7eb !important;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+html.dark .cheatcode-btn-gfg:hover,
+body.dark .cheatcode-btn-gfg:hover,
+[data-theme='dark'] .cheatcode-btn-gfg:hover,
+.dark .cheatcode-btn-gfg:hover {
+  background: #0d2417;
+  color: #4ade80 !important;
+  border-color: rgba(34, 197, 94, 0.5);
+  box-shadow: 0 3px 10px rgba(34, 197, 94, 0.25);
+}
+
+/* ═══════════════════ Floating Status Pill ═══════════════════ */
 .cheatcode-status-pill {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: rgba(23, 23, 23, 0.9);
-  backdrop-filter: blur(8px);
-  color: #f5f5f5;
-  padding: 6px 12px;
+  background: rgba(18, 19, 24, 0.92);
+  backdrop-filter: blur(10px);
+  color: #f3f4f6;
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 11px;
   font-weight: 500;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   z-index: 99999;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transform: translateY(6px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cheatcode-status-pill.active {
   opacity: 1;
+  transform: translateY(0);
 }

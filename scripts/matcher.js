@@ -32,6 +32,22 @@
     return true;
   }
 
+  // Extracts problem slug from LeetCode or GFG canonical URL
+  function extractProblemSlug(url) {
+    if (!url || typeof url !== 'string') return null;
+    try {
+      const u = new URL(url);
+      if (u.pathname.includes('/problems/')) {
+        const parts = u.pathname.split('/problems/')[1].split('/').filter(Boolean);
+        if (parts[0]) {
+          // Remove trailing numeric identifiers like overlapping-intervals--170633
+          return parts[0].replace(/--?\d+$/, '').replace(/[-_]+/g, ' ').trim();
+        }
+      }
+    } catch (e) {}
+    return null;
+  }
+
   // Normalize string for indexing and lookup
   function normalizeTitle(rawTitle) {
     if (!rawTitle || typeof rawTitle !== 'string') return { displayName: '', key: '', coreKey: '' };
@@ -55,16 +71,30 @@
     clean = clean.replace(/\s*\|\s*takeuforward.*$/i, '');
 
     // Strip punctuation and reduce whitespace
-    const alphaKey = clean
+    let alphaKey = clean
       .toLowerCase()
       .replace(/['’]/g, '')
       .replace(/[^a-z0-9]/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
 
+    // Canonicalize standard DSA terminology differences between TUF, LeetCode, and GFG
+    alphaKey = alphaKey
+      .replace(/\bzig\s*zag\b/g, 'zigzag')
+      .replace(/\brain\s*water\b/g, 'rainwater')
+      .replace(/\bsub\s*intervals?\b/g, 'intervals')
+      .replace(/\bsub\s*arrays?\b/g, 'subarray')
+      .replace(/\bsub\s*sequences?\b/g, 'subsequence')
+      .replace(/\bpalindromic\b/g, 'palindrome')
+      .replace(/\bnon\s*overlapping\b/g, 'nonoverlapping')
+      .replace(/\bk\s*th\b/g, 'kth')
+      .replace(/\b(of|in)\s+(a\s+)?(binary\s+tree|linked\s+list|array|string)\b/g, '$3')
+      .replace(/\s+/g, ' ')
+      .trim();
+
     // Core key removes common generic filler words like "problem", "algorithm", "implementation"
     const coreKey = alphaKey
-      .replace(/\b(problem|problems|algorithm|algorithms|approach|method)\b/g, '')
+      .replace(/\b(problem|problems|algorithm|algorithms|approach|method|implementation)\b/g, '')
       .replace(/\s+/g, ' ')
       .trim();
 
@@ -137,6 +167,7 @@
           tokens: new Set(norm.coreKey.split(' ').filter(t => t.length > 1))
         };
 
+        // 1. Index primary canonical title first (highest priority)
         const keysToIndex = [
           ...numberWordVariations(norm.key),
           ...numberWordVariations(norm.coreKey)
@@ -148,6 +179,48 @@
           }
         }
 
+        // 2. Index explicit aliases from dataset
+        if (Array.isArray(p.aliases)) {
+          for (const alias of p.aliases) {
+            const aNorm = normalizeTitle(alias);
+            if (aNorm.key) {
+              for (const ak of [...numberWordVariations(aNorm.key), ...numberWordVariations(aNorm.coreKey)]) {
+                if (!this.exactIndex.has(ak)) {
+                  this.exactIndex.set(ak, entry);
+                }
+              }
+              aNorm.coreKey.split(' ').filter(t => t.length > 1).forEach(t => entry.tokens.add(t));
+            }
+          }
+        }
+
+        // 3. Extract and index slugs from LeetCode & GFG URLs
+        const lcSlug = extractProblemSlug(p.leetcode);
+        if (lcSlug) {
+          const sNorm = normalizeTitle(lcSlug);
+          if (sNorm.key) {
+            for (const sk of [...numberWordVariations(sNorm.key), ...numberWordVariations(sNorm.coreKey)]) {
+              if (!this.exactIndex.has(sk)) {
+                this.exactIndex.set(sk, entry);
+              }
+            }
+            sNorm.coreKey.split(' ').filter(t => t.length > 1).forEach(t => entry.tokens.add(t));
+          }
+        }
+
+        const gfgSlug = extractProblemSlug(p.gfg);
+        if (gfgSlug) {
+          const gNorm = normalizeTitle(gfgSlug);
+          if (gNorm.key) {
+            for (const gk of [...numberWordVariations(gNorm.key), ...numberWordVariations(gNorm.coreKey)]) {
+              if (!this.exactIndex.has(gk)) {
+                this.exactIndex.set(gk, entry);
+              }
+            }
+            gNorm.coreKey.split(' ').filter(t => t.length > 1).forEach(t => entry.tokens.add(t));
+          }
+        }
+
         this.tokenIndex.push(entry);
       }
     }
@@ -156,7 +229,7 @@
       const norm = normalizeTitle(rawTitle);
       if (!norm.key) return null;
 
-      // 1. Exact Match via full key or core key or variations
+      // 1. Exact Match via full key or core key or number/word variations
       const queryVariations = [
         ...numberWordVariations(norm.key),
         ...numberWordVariations(norm.coreKey)
@@ -173,7 +246,7 @@
         }
       }
 
-      // 2. Substring matching (ranked by minimal length delta to avoid matching "Two Sum IV" for "Two Sum")
+      // 2. Substring matching (ranked by minimal length delta to prevent false positives)
       if (!matchedEntry) {
         let bestSubMatch = null;
         let minLengthDelta = Infinity;
@@ -194,13 +267,34 @@
           }
         }
 
-        if (bestSubMatch && minLengthDelta <= 15) {
+        if (bestSubMatch && minLengthDelta <= 18) {
           matchedEntry = bestSubMatch;
           matchType = 'substring';
         }
       }
 
-      // 3. Token Overlap / Fuzzy Match
+      // 3. Token Subset Matching (e.g. "Zigzag Traversal" inside "binary tree zigzag level order traversal")
+      if (!matchedEntry) {
+        const searchTokens = norm.coreKey.split(' ').filter(t => t.length > 2);
+        if (searchTokens.length >= 2) {
+          for (const entry of this.tokenIndex) {
+            let allPresent = true;
+            for (const token of searchTokens) {
+              if (!entry.tokens.has(token)) {
+                allPresent = false;
+                break;
+              }
+            }
+            if (allPresent) {
+              matchedEntry = entry;
+              matchType = 'token-subset';
+              break;
+            }
+          }
+        }
+      }
+
+      // 4. Token Overlap / Fuzzy Match
       if (!matchedEntry) {
         const searchTokens = norm.coreKey.split(' ').filter(t => t.length > 2);
         let bestTokenMatch = null;
@@ -213,7 +307,7 @@
               if (entry.tokens.has(token)) commonCount++;
             }
             const score = (2 * commonCount) / (searchTokens.length + entry.tokens.size);
-            if (score > highestScore && score >= 0.6) {
+            if (score > highestScore && score >= 0.5) {
               highestScore = score;
               bestTokenMatch = entry;
             }
@@ -251,6 +345,7 @@
   return {
     isValidDirectProblemUrl,
     normalizeTitle,
+    extractProblemSlug,
     Matcher
   };
 });

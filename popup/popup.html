@@ -12,7 +12,7 @@
     <header class="header">
       <div class="header-brand">
         <div class="logo-box">
-          <span class="logo-icon">&lt;/&gt;</span>
+          <img src="../icons/icon32.png" alt="CheatCode" class="logo-img" width="26" height="26">
         </div>
         <div>
           <h1 class="title">CheatCode</h1>
@@ -25,26 +25,32 @@
     <!-- Quick Search Section -->
     <section class="search-section">
       <div class="search-wrapper">
-        <span class="search-icon">🔍</span>
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </span>
         <input 
           type="text" 
           id="problem-search" 
           placeholder="Search 340+ Striver questions..." 
           autocomplete="off"
+          spellcheck="false"
         >
-        <button id="clear-search" class="clear-btn" title="Clear">✕</button>
+        <button id="clear-search" class="clear-btn" title="Clear search">✕</button>
       </div>
       <div id="search-results" class="search-results"></div>
     </section>
 
     <!-- Settings Controls -->
     <section class="controls-section">
-      <h2 class="section-heading">Platform Badges</h2>
+      <h2 class="section-heading">Display Preferences</h2>
       
       <label class="control-row">
         <div class="control-label">
           <span class="platform-dot dot-leetcode"></span>
-          <span>Show LeetCode Buttons</span>
+          <span>LeetCode Practice Buttons</span>
         </div>
         <input type="checkbox" id="toggle-leetcode" checked class="switch">
       </label>
@@ -52,7 +58,7 @@
       <label class="control-row">
         <div class="control-label">
           <span class="platform-dot dot-gfg"></span>
-          <span>Show GeeksforGeeks Buttons</span>
+          <span>GeeksforGeeks Practice Buttons</span>
         </div>
         <input type="checkbox" id="toggle-gfg" checked class="switch">
       </label>
@@ -63,7 +69,7 @@
       <div class="info-icon">⚡</div>
       <div class="info-text">
         <strong>Active on TakeUForward</strong>
-        <p>Links are injected automatically as you browse the A2Z sheet.</p>
+        <p>Direct links are injected automatically as you browse the A2Z sheet.</p>
       </div>
     </section>
 
