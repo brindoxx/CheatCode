@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CheatCode</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-brand">
+        <div class="logo-box">
+          <span class="logo-icon">&lt;/&gt;</span>
+        </div>
+        <div>
+          <h1 class="title">CheatCode</h1>
+          <p class="subtitle">Striver A2Z Link Restorer</p>
+        </div>
+      </div>
+      <span class="version-tag">v1.0.0</span>
+    </header>
+
+    <!-- Quick Search Section -->
+    <section class="search-section">
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input 
+          type="text" 
+          id="problem-search" 
+          placeholder="Search 340+ Striver questions..." 
+          autocomplete="off"
+        >
+        <button id="clear-search" class="clear-btn" title="Clear">✕</button>
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </section>
+
+    <!-- Settings Controls -->
+    <section class="controls-section">
+      <h2 class="section-heading">Platform Badges</h2>
+      
+      <label class="control-row">
+        <div class="control-label">
+          <span class="platform-dot dot-leetcode"></span>
+          <span>Show LeetCode Buttons</span>
+        </div>
+        <input type="checkbox" id="toggle-leetcode" checked class="switch">
+      </label>
+
+      <label class="control-row">
+        <div class="control-label">
+          <span class="platform-dot dot-gfg"></span>
+          <span>Show GeeksforGeeks Buttons</span>
+        </div>
+        <input type="checkbox" id="toggle-gfg" checked class="switch">
+      </label>
+    </section>
+
+    <!-- Status Card -->
+    <section class="info-card">
+      <div class="info-icon">⚡</div>
+      <div class="info-text">
+        <strong>Active on TakeUForward</strong>
+        <p>Links are injected automatically as you browse the A2Z sheet.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span class="dev-tag">Built with ❤️ by <strong>brindoxx</strong></span>
+      <div class="footer-links">
+        <a href="https://github.com/brindoxx/CheatCode" target="_blank" rel="noopener noreferrer" class="link-btn">
+          ⭐ Star on GitHub
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../scripts/matcher.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
