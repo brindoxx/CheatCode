@@ -53,7 +53,7 @@ In a recent platform redesign, **direct external links to LeetCode and GeeksforG
 
 You do **not** need to wait for a store approval or pay any fees to use CheatCode. You can install it right now in 30 seconds:
 
-### Method 1: Load Unpacked (Chrome / Edge / Brave / Opera)
+### Load Unpacked (Chrome / Edge / Brave / Opera)
 
 1. **Download CheatCode**:
    - Clone this repository:
@@ -78,15 +78,6 @@ You do **not** need to wait for a store approval or pay any fees to use CheatCod
    - Navigate to [takeuforward.org/prep-hub/strivers-a2z-dsa-sheet?page=sheet](https://takeuforward.org/prep-hub/strivers-a2z-dsa-sheet?page=sheet).
    - Expand any module (Arrays, Binary Search, DP, Trees).
    - Enjoy your direct **LeetCode** and **GFG** buttons! 🎉
-
----
-
-### Method 2: Tampermonkey Userscript (Single Click)
-
-If you already use **Tampermonkey** or **Violentmonkey**:
-1. Open [`cheatcode.user.js`](cheatcode.user.js).
-2. Click **Raw** to trigger Tampermonkey's auto-installer.
-3. Click **Install**. Done!
 
 ---
 
