@@ -378,7 +378,7 @@ PROBLEMS = [
         "title": "Largest Subarray with 0 Sum",
         "topic": "Arrays - Hard",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/contiguous-array/",
         "gfg": "https://www.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1"
     },
     {
@@ -413,7 +413,7 @@ PROBLEMS = [
         "title": "Count Inversions",
         "topic": "Arrays - Hard",
         "difficulty": "Hard",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/reverse-pairs/",
         "gfg": "https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1"
     },
     {
@@ -861,7 +861,7 @@ PROBLEMS = [
         "title": "Sort a LL of 0's 1's and 2's",
         "topic": "LinkedList - Medium",
         "difficulty": "Easy",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/sort-list/",
         "gfg": "https://www.geeksforgeeks.org/problems/given-a-linked-list-of-0s-1s-and-2s-sort-it/1"
     },
     {
@@ -1112,14 +1112,14 @@ PROBLEMS = [
         "title": "Implement Stack using Arrays",
         "topic": "Stack and Queues",
         "difficulty": "Easy",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/implement-stack-using-queues/",
         "gfg": "https://www.geeksforgeeks.org/problems/implement-stack-using-array/1"
     },
     {
         "title": "Implement Queue using Arrays",
         "topic": "Stack and Queues",
         "difficulty": "Easy",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/implement-queue-using-stacks/",
         "gfg": "https://www.geeksforgeeks.org/problems/implement-queue-using-array/1"
     },
     {
@@ -1168,7 +1168,7 @@ PROBLEMS = [
         "title": "Next Smaller Element",
         "topic": "Monotonic Stack",
         "difficulty": "Easy",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/next-greater-element-i/",
         "gfg": "https://www.geeksforgeeks.org/problems/immediate-smaller-element1142/1"
     },
     {
@@ -1922,14 +1922,14 @@ PROBLEMS = [
         "title": "Bellman Ford Algorithm",
         "topic": "Graphs - Shortest Path",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
         "gfg": "https://www.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/1"
     },
     {
         "title": "Floyd Warshall Algorithm",
         "topic": "Graphs - Shortest Path",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/",
         "gfg": "https://www.geeksforgeeks.org/problems/floyd-warshall4853/1"
     },
     {
@@ -2006,7 +2006,7 @@ PROBLEMS = [
         "title": "Articulation Point in Graph",
         "topic": "Graphs - Advanced",
         "difficulty": "Hard",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/critical-connections-in-a-network/",
         "gfg": "https://www.geeksforgeeks.org/problems/articulation-point-1/1"
     },
     {
@@ -2134,7 +2134,7 @@ PROBLEMS = [
         "title": "Count Subsets with Sum K",
         "topic": "DP - Subsequences",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/target-sum/",
         "gfg": "https://www.geeksforgeeks.org/problems/perfect-sum-problem5633/1"
     },
     {
@@ -2148,7 +2148,7 @@ PROBLEMS = [
         "title": "0/1 Knapsack",
         "topic": "DP - Subsequences",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/partition-equal-subset-sum/",
         "gfg": "https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1"
     },
     {
@@ -2176,14 +2176,14 @@ PROBLEMS = [
         "title": "Unbounded Knapsack",
         "topic": "DP - Subsequences",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/coin-change-ii/",
         "gfg": "https://www.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1"
     },
     {
         "title": "Rod Cutting Problem",
         "topic": "DP - Subsequences",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/integer-break/",
         "gfg": "https://www.geeksforgeeks.org/problems/rod-cutting0840/1"
     },
     {
@@ -2316,7 +2316,7 @@ PROBLEMS = [
         "title": "Longest Bitonic Subsequence",
         "topic": "DP - LIS",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/wiggle-subsequence/",
         "gfg": "https://www.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/1"
     },
     {
@@ -2330,7 +2330,7 @@ PROBLEMS = [
         "title": "Matrix Chain Multiplication",
         "topic": "DP - Partition",
         "difficulty": "Hard",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/burst-balloons/",
         "gfg": "https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1"
     },
     {
@@ -2351,7 +2351,7 @@ PROBLEMS = [
         "title": "Evaluate Boolean Expression to True",
         "topic": "DP - Partition",
         "difficulty": "Hard",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/parsing-a-boolean-expression/",
         "gfg": "https://www.geeksforgeeks.org/problems/boolean-parenthesization5611/1"
     },
     {
