@@ -2,7 +2,7 @@
  * CheatCode - Problem Matching Engine
  * Author: brindoxx
  * Description: Normalizes titles, executes exact/fuzzy lookup against Striver's sheet,
- * and provides dynamic smart fallback URLs for LeetCode & GeeksforGeeks.
+ * and ensures only direct, canonical LeetCode & GeeksforGeeks problem links are provided.
  */
 
 (function (root, factory) {
@@ -12,6 +12,25 @@
     root.CheatCodeMatcher = factory();
   }
 })(typeof self !== 'undefined' ? self : this, function () {
+
+  // Validates if URL is an actual direct practice problem link (not a search or problemset list page)
+  function isValidDirectProblemUrl(url, platform) {
+    if (!url || typeof url !== 'string') return false;
+    const clean = url.trim();
+    if (!clean.startsWith('http://') && !clean.startsWith('https://')) return false;
+
+    if (platform === 'leetcode') {
+      if (clean.includes('/problemset') || clean.includes('/search')) return false;
+      return clean.includes('leetcode.com/problems/');
+    }
+
+    if (platform === 'gfg') {
+      if (clean.includes('/search/?') || clean.includes('/search?')) return false;
+      return clean.includes('geeksforgeeks.org/problems/') || clean.includes('practice.geeksforgeeks.org/problems/');
+    }
+
+    return true;
+  }
 
   // Normalize string for indexing and lookup
   function normalizeTitle(rawTitle) {
@@ -143,87 +162,94 @@
         ...numberWordVariations(norm.coreKey)
       ];
 
+      let matchedEntry = null;
+      let matchType = '';
+
       for (const q of queryVariations) {
         if (this.exactIndex.has(q)) {
-          return {
-            ...this.exactIndex.get(q),
-            isFallback: false,
-            matchType: 'exact'
-          };
+          matchedEntry = this.exactIndex.get(q);
+          matchType = 'exact';
+          break;
         }
       }
 
       // 2. Substring matching (ranked by minimal length delta to avoid matching "Two Sum IV" for "Two Sum")
-      let bestSubMatch = null;
-      let minLengthDelta = Infinity;
+      if (!matchedEntry) {
+        let bestSubMatch = null;
+        let minLengthDelta = Infinity;
 
-      for (const entry of this.tokenIndex) {
-        const matchFound = 
-          entry.coreKey.includes(norm.coreKey) || 
-          norm.coreKey.includes(entry.coreKey) ||
-          entry.normKey.includes(norm.key) ||
-          norm.key.includes(entry.normKey);
+        for (const entry of this.tokenIndex) {
+          const matchFound = 
+            entry.coreKey.includes(norm.coreKey) || 
+            norm.coreKey.includes(entry.coreKey) ||
+            entry.normKey.includes(norm.key) ||
+            norm.key.includes(entry.normKey);
 
-        if (matchFound) {
-          const delta = Math.abs(entry.normKey.length - norm.key.length);
-          if (delta < minLengthDelta) {
-            minLengthDelta = delta;
-            bestSubMatch = entry;
+          if (matchFound) {
+            const delta = Math.abs(entry.normKey.length - norm.key.length);
+            if (delta < minLengthDelta) {
+              minLengthDelta = delta;
+              bestSubMatch = entry;
+            }
           }
         }
-      }
 
-      if (bestSubMatch && minLengthDelta <= 15) {
-        return {
-          ...bestSubMatch,
-          isFallback: false,
-          matchType: 'substring'
-        };
+        if (bestSubMatch && minLengthDelta <= 15) {
+          matchedEntry = bestSubMatch;
+          matchType = 'substring';
+        }
       }
 
       // 3. Token Overlap / Fuzzy Match
-      const searchTokens = norm.coreKey.split(' ').filter(t => t.length > 2);
-      let bestTokenMatch = null;
-      let highestScore = 0;
+      if (!matchedEntry) {
+        const searchTokens = norm.coreKey.split(' ').filter(t => t.length > 2);
+        let bestTokenMatch = null;
+        let highestScore = 0;
 
-      if (searchTokens.length > 0) {
-        for (const entry of this.tokenIndex) {
-          let commonCount = 0;
-          for (const token of searchTokens) {
-            if (entry.tokens.has(token)) commonCount++;
+        if (searchTokens.length > 0) {
+          for (const entry of this.tokenIndex) {
+            let commonCount = 0;
+            for (const token of searchTokens) {
+              if (entry.tokens.has(token)) commonCount++;
+            }
+            const score = (2 * commonCount) / (searchTokens.length + entry.tokens.size);
+            if (score > highestScore && score >= 0.6) {
+              highestScore = score;
+              bestTokenMatch = entry;
+            }
           }
-          const score = (2 * commonCount) / (searchTokens.length + entry.tokens.size);
-          if (score > highestScore && score >= 0.6) {
-            highestScore = score;
-            bestTokenMatch = entry;
-          }
+        }
+
+        if (bestTokenMatch) {
+          matchedEntry = bestTokenMatch;
+          matchType = 'fuzzy';
         }
       }
 
-      if (bestTokenMatch) {
-        return {
-          ...bestTokenMatch,
-          isFallback: false,
-          matchType: 'fuzzy',
-          score: highestScore
-        };
+      // If problem is not found in database, do not generate fallback search URLs
+      if (!matchedEntry) {
+        return null;
       }
 
-      // 4. Smart Fallback: Generate real search URLs if not found in database
-      const fallbackTitle = norm.displayName || rawTitle;
+      const lcDirect = isValidDirectProblemUrl(matchedEntry.leetcode, 'leetcode') ? matchedEntry.leetcode : null;
+      const gfgDirect = isValidDirectProblemUrl(matchedEntry.gfg, 'gfg') ? matchedEntry.gfg : null;
+
+      // If the problem does not exist on either platform, do not mention it
+      if (!lcDirect && !gfgDirect) {
+        return null;
+      }
+
       return {
-        title: fallbackTitle,
-        topic: 'DSA Practice',
-        difficulty: 'Practice',
-        leetcode: `https://leetcode.com/problemset/?search=${encodeURIComponent(fallbackTitle)}`,
-        gfg: `https://www.geeksforgeeks.org/search/?q=${encodeURIComponent(fallbackTitle)}`,
-        isFallback: true,
-        matchType: 'fallback'
+        ...matchedEntry,
+        leetcode: lcDirect,
+        gfg: gfgDirect,
+        matchType: matchType
       };
     }
   }
 
   return {
+    isValidDirectProblemUrl,
     normalizeTitle,
     Matcher
   };

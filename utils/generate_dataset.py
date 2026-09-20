@@ -45,7 +45,7 @@ PROBLEMS = [
         "title": "Print all Divisors",
         "topic": "Basic Math",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=divisors",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/sum-of-all-divisors-from-1-to-n4738/1"
     },
     {
@@ -59,28 +59,28 @@ PROBLEMS = [
         "title": "Print 1 to N using Recursion",
         "topic": "Basic Recursion",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=print+1+to+n",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/print-1-to-n-without-using-loops-1587115620/1"
     },
     {
         "title": "Print N to 1 using Recursion",
         "topic": "Basic Recursion",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=print+n+to+1",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/print-n-to-1-without-loop/1"
     },
     {
         "title": "Sum of first N numbers",
         "topic": "Basic Recursion",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=sum+of+first+n+numbers",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/sum-of-first-n-terms5843/1"
     },
     {
         "title": "Factorial of N numbers",
         "topic": "Basic Recursion",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=factorial",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/find-all-factorial-numbers-less-than-or-equal-to-n3548/1"
     },
     {
@@ -108,7 +108,7 @@ PROBLEMS = [
         "title": "Count Frequency of elements in array",
         "topic": "Basic Hashing",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=frequency+in+array",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/frequency-of-array-elements-1587115620/1"
     },
     {
@@ -161,14 +161,14 @@ PROBLEMS = [
         "title": "Largest Element in an Array",
         "topic": "Arrays - Easy",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=largest+element+in+array",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/largest-element-in-array4009/1"
     },
     {
         "title": "Second Largest Element in an Array without sorting",
         "topic": "Arrays - Easy",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=second+largest",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/second-largest3735/1"
     },
     {
@@ -210,7 +210,7 @@ PROBLEMS = [
         "title": "Linear Search",
         "topic": "Arrays - Easy",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=linear+search",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/who-will-win-1587115621/1"
     },
     {
@@ -308,7 +308,7 @@ PROBLEMS = [
         "title": "Leaders in an Array",
         "topic": "Arrays - Medium",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=leaders+in+array",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1"
     },
     {
@@ -378,14 +378,14 @@ PROBLEMS = [
         "title": "Largest Subarray with 0 Sum",
         "topic": "Arrays - Hard",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=subarray+with+0+sum",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1"
     },
     {
         "title": "Count Subarrays with Given XOR K",
         "topic": "Arrays - Hard",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=xor+subarray",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/count-subarray-with-given-xor/1"
     },
     {
@@ -406,14 +406,14 @@ PROBLEMS = [
         "title": "Find the Missing and Repeating Number",
         "topic": "Arrays - Hard",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=missing+and+repeated",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/find-missing-and-repeating2512/1"
     },
     {
         "title": "Count Inversions",
         "topic": "Arrays - Hard",
         "difficulty": "Hard",
-        "leetcode": "https://leetcode.com/problemset/?search=inversion+count",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1"
     },
     {
@@ -534,7 +534,7 @@ PROBLEMS = [
         "title": "Find Nth Root of M",
         "topic": "Binary Search - Answers",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=nth+root",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/find-nth-root-of-m5843/1"
     },
     {
@@ -646,7 +646,7 @@ PROBLEMS = [
         "title": "Matrix Median",
         "topic": "Binary Search - 2D",
         "difficulty": "Hard",
-        "leetcode": "https://leetcode.com/problemset/?search=matrix+median",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/median-in-a-row-wise-sorted-matrix1527/1"
     },
 
@@ -777,14 +777,14 @@ PROBLEMS = [
         "title": "Find Length of Linked List",
         "topic": "LinkedList - 1D",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=length+of+linked+list",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/count-nodes-of-linked-list/1"
     },
     {
         "title": "Search an element in the LL",
         "topic": "LinkedList - 1D",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=search+in+linked+list",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/search-in-linked-list-1664434510/1"
     },
     {
@@ -861,7 +861,7 @@ PROBLEMS = [
         "title": "Sort a LL of 0's 1's and 2's",
         "topic": "LinkedList - Medium",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=sort+0+1+2+linked+list",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/given-a-linked-list-of-0s-1s-and-2s-sort-it/1"
     },
     {
@@ -1003,7 +1003,7 @@ PROBLEMS = [
         "title": "Rat in a Maze Problem",
         "topic": "Recursion - Hard",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=rat+in+a+maze",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1"
     },
     {
@@ -1017,7 +1017,7 @@ PROBLEMS = [
         "title": "M-Coloring Problem",
         "topic": "Recursion - Hard",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=m+coloring",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1"
     },
     {
@@ -1033,14 +1033,14 @@ PROBLEMS = [
         "title": "Introduction to Bit Manipulation",
         "topic": "Bit Manipulation",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=bit+manipulation",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/bit-manipulation-1666686020/1"
     },
     {
         "title": "Check whether K-th bit is set or not",
         "topic": "Bit Manipulation",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=check+kth+bit",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/check-whether-k-th-bit-is-set-or-not-1587115620/1"
     },
     {
@@ -1061,14 +1061,14 @@ PROBLEMS = [
         "title": "Set/Unset the rightmost unset bit",
         "topic": "Bit Manipulation",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=set+rightmost+unset+bit",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/set-the-rightmost-unset-bit4436/1"
     },
     {
         "title": "Swap two numbers without third variable",
         "topic": "Bit Manipulation",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=swap+two+numbers",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/swap-two-numbers3844/1"
     },
     {
@@ -1103,7 +1103,7 @@ PROBLEMS = [
         "title": "Find XOR of numbers from L to R",
         "topic": "Bit Manipulation - Interview",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=xor+from+l+to+r",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/find-xor-of-numbers-from-l-to-r/1"
     },
 
@@ -1112,14 +1112,14 @@ PROBLEMS = [
         "title": "Implement Stack using Arrays",
         "topic": "Stack and Queues",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=implement+stack",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/implement-stack-using-array/1"
     },
     {
         "title": "Implement Queue using Arrays",
         "topic": "Stack and Queues",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=implement+queue",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/implement-queue-using-array/1"
     },
     {
@@ -1168,7 +1168,7 @@ PROBLEMS = [
         "title": "Next Smaller Element",
         "topic": "Monotonic Stack",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=next+smaller+element",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/immediate-smaller-element1142/1"
     },
     {
@@ -1340,7 +1340,7 @@ PROBLEMS = [
         "title": "Introduction to Priority Queues using Binary Heaps",
         "topic": "Heaps",
         "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problemset/?search=heap",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/binary-heap-operations/1"
     },
     {
@@ -1361,7 +1361,7 @@ PROBLEMS = [
         "title": "Sort K-Sorted Array",
         "topic": "Heaps",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=nearly+sorted",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/nearly-sorted-1587115620/1"
     },
     {
@@ -1475,14 +1475,14 @@ PROBLEMS = [
         "title": "Minimum Platforms Required",
         "topic": "Greedy",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=minimum+platforms",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/minimum-platforms-1587115620/1"
     },
     {
         "title": "Job Sequencing Problem",
         "topic": "Greedy",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=job+sequencing",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1"
     },
     {
@@ -1596,14 +1596,14 @@ PROBLEMS = [
         "title": "Top View of Binary Tree",
         "topic": "Binary Trees - Medium",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=top+view+binary+tree",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1"
     },
     {
         "title": "Bottom View of Binary Tree",
         "topic": "Binary Trees - Medium",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=bottom+view+binary+tree",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1"
     },
     {
@@ -1645,7 +1645,7 @@ PROBLEMS = [
         "title": "Children Sum Property in Binary Tree",
         "topic": "Binary Trees - Hard",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=children+sum+property",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/children-sum-parent/1"
     },
     {
@@ -1717,14 +1717,14 @@ PROBLEMS = [
         "title": "Ceil in a Binary Search Tree",
         "topic": "BST",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=ceil+in+bst",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/implementing-ceil-in-bst/1"
     },
     {
         "title": "Floor in a Binary Search Tree",
         "topic": "BST",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=floor+in+bst",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/floor-in-bst/1"
     },
     {
@@ -1880,7 +1880,7 @@ PROBLEMS = [
         "title": "Detect Cycle in an Undirected Graph",
         "topic": "Graphs",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=cycle+undirected+graph",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1"
     },
     {
@@ -1922,14 +1922,14 @@ PROBLEMS = [
         "title": "Bellman Ford Algorithm",
         "topic": "Graphs - Shortest Path",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=bellman+ford",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/1"
     },
     {
         "title": "Floyd Warshall Algorithm",
         "topic": "Graphs - Shortest Path",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=floyd+warshall",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/floyd-warshall4853/1"
     },
     {
@@ -2006,14 +2006,14 @@ PROBLEMS = [
         "title": "Articulation Point in Graph",
         "topic": "Graphs - Advanced",
         "difficulty": "Hard",
-        "leetcode": "https://leetcode.com/problemset/?search=articulation+point",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/articulation-point-1/1"
     },
     {
         "title": "Strongly Connected Components (Kosaraju's Algorithm)",
         "topic": "Graphs - Advanced",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=strongly+connected+components",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1"
     },
 
@@ -2064,7 +2064,7 @@ PROBLEMS = [
         "title": "Ninja's Training",
         "topic": "DP - 2D",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=ninjas+training",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/geeks-training/1"
     },
     {
@@ -2134,7 +2134,7 @@ PROBLEMS = [
         "title": "Count Subsets with Sum K",
         "topic": "DP - Subsequences",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=count+subsets+with+sum+k",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/perfect-sum-problem5633/1"
     },
     {
@@ -2148,7 +2148,7 @@ PROBLEMS = [
         "title": "0/1 Knapsack",
         "topic": "DP - Subsequences",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=0+1+knapsack",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1"
     },
     {
@@ -2176,14 +2176,14 @@ PROBLEMS = [
         "title": "Unbounded Knapsack",
         "topic": "DP - Subsequences",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=unbounded+knapsack",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1"
     },
     {
         "title": "Rod Cutting Problem",
         "topic": "DP - Subsequences",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=rod+cutting",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/rod-cutting0840/1"
     },
     {
@@ -2316,7 +2316,7 @@ PROBLEMS = [
         "title": "Longest Bitonic Subsequence",
         "topic": "DP - LIS",
         "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problemset/?search=longest+bitonic+subsequence",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/1"
     },
     {
@@ -2330,7 +2330,7 @@ PROBLEMS = [
         "title": "Matrix Chain Multiplication",
         "topic": "DP - Partition",
         "difficulty": "Hard",
-        "leetcode": "https://leetcode.com/problemset/?search=matrix+chain+multiplication",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1"
     },
     {
@@ -2351,7 +2351,7 @@ PROBLEMS = [
         "title": "Evaluate Boolean Expression to True",
         "topic": "DP - Partition",
         "difficulty": "Hard",
-        "leetcode": "https://leetcode.com/problemset/?search=boolean+parenthesization",
+        "leetcode": None,
         "gfg": "https://www.geeksforgeeks.org/problems/boolean-parenthesization5611/1"
     },
     {

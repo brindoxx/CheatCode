@@ -60,22 +60,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     resultsContainer.innerHTML = '';
 
     if (matches.length === 0) {
-      // Smart Fallback result
-      const fallbackDiv = document.createElement('div');
-      fallbackDiv.className = 'result-item';
-      fallbackDiv.innerHTML = `
+      const emptyDiv = document.createElement('div');
+      emptyDiv.className = 'result-item';
+      emptyDiv.style.cursor = 'default';
+      emptyDiv.innerHTML = `
         <div class="result-info">
-          <span class="result-title">${escapeHtml(query)}</span>
-          <span class="result-topic">Search on platforms</span>
-        </div>
-        <div class="result-actions">
-          <a href="https://leetcode.com/problemset/?search=${encodeURIComponent(query)}" target="_blank" class="mini-btn mini-btn-lc">LC</a>
-          <a href="https://www.geeksforgeeks.org/search/?q=${encodeURIComponent(query)}" target="_blank" class="mini-btn mini-btn-gfg">GFG</a>
+          <span class="result-title">No matching problems found</span>
+          <span class="result-topic">Try another problem title or keyword</span>
         </div>
       `;
-      resultsContainer.appendChild(fallbackDiv);
+      resultsContainer.appendChild(emptyDiv);
     } else {
       matches.forEach(p => {
+        const hasLc = p.leetcode && p.leetcode.includes('leetcode.com/problems/');
+        const hasGfg = p.gfg && (p.gfg.includes('geeksforgeeks.org/problems/') || p.gfg.includes('practice.geeksforgeeks.org/problems/'));
+
         const item = document.createElement('div');
         item.className = 'result-item';
         item.innerHTML = `
@@ -84,8 +83,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             <span class="result-topic">${escapeHtml(p.topic)} • ${escapeHtml(p.difficulty)}</span>
           </div>
           <div class="result-actions">
-            ${p.leetcode ? `<a href="${p.leetcode}" target="_blank" class="mini-btn mini-btn-lc" title="Open in LeetCode">LC</a>` : ''}
-            ${p.gfg ? `<a href="${p.gfg}" target="_blank" class="mini-btn mini-btn-gfg" title="Open in GeeksforGeeks">GFG</a>` : ''}
+            ${hasLc ? `<a href="${p.leetcode}" target="_blank" class="mini-btn mini-btn-lc" title="Open in LeetCode">LC</a>` : ''}
+            ${hasGfg ? `<a href="${p.gfg}" target="_blank" class="mini-btn mini-btn-gfg" title="Open in GeeksforGeeks">GFG</a>` : ''}
           </div>
         `;
         resultsContainer.appendChild(item);

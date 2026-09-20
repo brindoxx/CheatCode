@@ -42,7 +42,7 @@ In a recent platform redesign, **direct external links to LeetCode and GeeksforG
 | 🟧 **Direct LeetCode Badges** | Opens the exact canonical LeetCode problem with 1 click. |
 | 🟩 **Direct GFG Badges** | Opens the corresponding GeeksforGeeks practice problem. |
 | 🔄 **SPA / Next.js Observer** | Automatically detects newly expanded accordions and tab transitions without page reloads. |
-| 🔍 **Smart Fallback Engine** | If a new question is added by Striver, it intelligently generates direct search URLs so you are never stuck. |
+| 🎯 **Direct Links Only** | Strictly links to verified practice problems—if a problem does not exist on LeetCode or GFG, it is cleanly omitted without useless search redirects. |
 | ⚡ **Offline Problem Finder** | Search 340+ A2Z questions instantly from the extension popup. |
 | 🎨 **Theme Adaptive** | Automatically adapts to TakeUForward's light and dark modes. |
 | 🔒 **100% Private & Open Source** | Zero data collection, no telemetry, no tracking. |

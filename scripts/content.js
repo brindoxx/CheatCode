@@ -73,20 +73,24 @@
   }
 
   function createBadgeContainer(matchInfo) {
+    if (!matchInfo) return null;
+
+    const hasLeetcode = Boolean(matchInfo.leetcode);
+    const hasGfg = Boolean(matchInfo.gfg);
+
+    if (!hasLeetcode && !hasGfg) return null;
+
     const container = document.createElement('span');
     container.className = 'cheatcode-badge-container';
 
-    // LeetCode Button
-    if (matchInfo.leetcode) {
+    // LeetCode Button - ONLY if problem exists directly on LeetCode
+    if (hasLeetcode) {
       const lcBtn = document.createElement('a');
       lcBtn.className = 'cheatcode-btn cheatcode-btn-leetcode';
-      if (matchInfo.isFallback) lcBtn.classList.add('cheatcode-btn-fallback');
       lcBtn.href = matchInfo.leetcode;
       lcBtn.target = '_blank';
       lcBtn.rel = 'noopener noreferrer';
-      lcBtn.title = matchInfo.isFallback
-        ? `Search "${matchInfo.title}" on LeetCode`
-        : `Solve "${matchInfo.title}" on LeetCode`;
+      lcBtn.title = `Solve "${matchInfo.title}" on LeetCode`;
       lcBtn.innerHTML = `${LEETCODE_SVG}<span>LeetCode</span>`;
       lcBtn.style.display = settings.showLeetcode ? 'inline-flex' : 'none';
       
@@ -95,17 +99,14 @@
       container.appendChild(lcBtn);
     }
 
-    // GeeksforGeeks Button
-    if (matchInfo.gfg) {
+    // GeeksforGeeks Button - ONLY if problem exists directly on GeeksforGeeks
+    if (hasGfg) {
       const gfgBtn = document.createElement('a');
       gfgBtn.className = 'cheatcode-btn cheatcode-btn-gfg';
-      if (matchInfo.isFallback) gfgBtn.classList.add('cheatcode-btn-fallback');
       gfgBtn.href = matchInfo.gfg;
       gfgBtn.target = '_blank';
       gfgBtn.rel = 'noopener noreferrer';
-      gfgBtn.title = matchInfo.isFallback
-        ? `Search "${matchInfo.title}" on GeeksforGeeks`
-        : `Solve "${matchInfo.title}" on GeeksforGeeks`;
+      gfgBtn.title = `Solve "${matchInfo.title}" on GeeksforGeeks`;
       gfgBtn.innerHTML = `${GFG_SVG}<span>GFG</span>`;
       gfgBtn.style.display = settings.showGfg ? 'inline-flex' : 'none';
 
@@ -113,6 +114,7 @@
       container.appendChild(gfgBtn);
     }
 
+    if (container.children.length === 0) return null;
     return container;
   }
 
@@ -160,8 +162,10 @@
     const matchInfo = matcher.find(problemTitle);
     if (!matchInfo) return;
 
-    row.setAttribute('data-cheatcode-injected', 'true');
     const badgeContainer = createBadgeContainer(matchInfo);
+    if (!badgeContainer) return;
+
+    row.setAttribute('data-cheatcode-injected', 'true');
 
     // Place container right next to the title or inside the title's parent
     if (titleEl.parentNode) {
@@ -204,9 +208,11 @@
       if (!isIgnoredText(titleText)) {
         const matchInfo = matcher.find(titleText);
         if (matchInfo) {
-          mainTitle.setAttribute('data-cheatcode-injected', 'true');
           const badgeContainer = createBadgeContainer(matchInfo);
-          mainTitle.appendChild(badgeContainer);
+          if (badgeContainer) {
+            mainTitle.setAttribute('data-cheatcode-injected', 'true');
+            mainTitle.appendChild(badgeContainer);
+          }
         }
       }
     }
