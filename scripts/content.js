@@ -117,19 +117,43 @@
     return container;
   }
 
+  // Non-problem pages where CheatCode should never inject badges
+  function isNonProblemPage() {
+    const path = window.location.pathname.toLowerCase();
+    return (
+      path.startsWith('/leaderboard') ||
+      path.startsWith('/profile') ||
+      path.startsWith('/settings') ||
+      path.startsWith('/login') ||
+      path.startsWith('/register') ||
+      path.startsWith('/signup') ||
+      path.startsWith('/notifications') ||
+      path.startsWith('/pricing') ||
+      path.startsWith('/plus/pricing') ||
+      path.startsWith('/community') ||
+      path.startsWith('/coins')
+    );
+  }
+
   // Ignored common labels/texts and badge strings
   const IGNORED_STRINGS = new Set([
     'easy', 'medium', 'hard', 'basic', 'solved', 'unsolved', 'revision', 'notes',
     'status', 'problem', 'practice', 'editorial', 'submission', 'bookmark',
     'youtube', 'code', 'c++', 'java', 'python', 'javascript', 'submit', 'run',
     'dashboard', 'planly', 'prep hub', 'community', 'blogs', 'codespace',
-    'core', 'must do', 'starred', 'optional', 'faq', 'faqs', 'article', 'video'
+    'core', 'must do', 'starred', 'optional', 'faq', 'faqs', 'article', 'video',
+    'rank', 'learners', 'leaderboard', 'coins', 'trophies', 'titles', 'you'
   ]);
 
   function isIgnoredText(text) {
     const t = text.trim().toLowerCase();
     if (t.length < 2) return true;
     if (IGNORED_STRINGS.has(t)) return true;
+    if (/^#?\d+$/.test(t)) return true; // Pure numbers or ranks: e.g. #10, 10
+    if (/^#?\d+(st|nd|rd|th)$/i.test(t)) return true; // 1st, 2nd, 3rd, #10th
+    if (/^@[a-z0-9_.-]+$/i.test(t)) return true; // User handles like @tanyaag31
+    if (/^\d+(\.\d+)?[kmb]?\s*(coins?|pts?|points?|xp|per\s*page)?$/i.test(t)) return true; // 650, 1.1k coins, 10 per page
+    if (/^page\s*\d+$/i.test(t)) return true; // Page 1, Page 2
     if (/^\d+(\.\d+)?%$/.test(t)) return true; // Accuracy percentage
     return false;
   }
@@ -143,12 +167,20 @@
       return;
     }
 
+    // Skip rows located in leaderboards, user profiles, or ranking tables
+    if (row.closest('[class*="leaderboard"], [class*="Leaderboard"], [class*="ranking"], [class*="rank"]')) {
+      row.setAttribute('data-cheatcode-injected', 'true');
+      return;
+    }
+
     const titleCandidates = row.querySelectorAll('span[class*="problemLabel"], td[data-label="Problem"] div, a, p, span, h3, h4');
     let matchedEl = null;
     let matchInfo = null;
 
     for (const el of titleCandidates) {
       if (el.closest('.cheatcode-badge-container')) continue;
+      // Skip rank badges or username containers
+      if (el.closest('[class*="rank"], [class*="learner"], [class*="coin"], [class*="avatar"]')) continue;
 
       // Strategy A: If element has an href, extract problem slug
       const href = el.getAttribute('href');
@@ -191,7 +223,7 @@
           .replace(/\s+/g, ' ')
           .trim();
 
-        if (cleanedTxt.length >= 3) {
+        if (cleanedTxt.length >= 3 && !isIgnoredText(cleanedTxt)) {
           const found = matcher.find(cleanedTxt);
           if (found) {
             matchedEl = el;
@@ -231,6 +263,7 @@
   // Scan all potential problem containers
   function scanAndInject() {
     if (!matcher) return;
+    if (isNonProblemPage()) return;
 
     // Potential problem rows across different TUF layouts
     const selectors = [

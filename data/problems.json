@@ -37,7 +37,7 @@
     "topic": "Patterns",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/triangle-number-1661427181/1"
+    "gfg": null
   },
   {
     "title": "Pattern 5",
@@ -57,7 +57,7 @@
     "topic": "Patterns",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/triangle-number-1661493238/1"
+    "gfg": null
   },
   {
     "title": "Pattern 7",
@@ -67,7 +67,7 @@
     "topic": "Patterns",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/triangle-pattern-1661493864/1"
+    "gfg": null
   },
   {
     "title": "Pattern 8",
@@ -77,7 +77,7 @@
     "topic": "Patterns",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/triangle-pattern-1661493922/1"
+    "gfg": null
   },
   {
     "title": "Pattern 9",
@@ -117,7 +117,7 @@
     "topic": "Patterns",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/double-triangle-pattern-1662287412/1"
+    "gfg": null
   },
   {
     "title": "Pattern 13",
@@ -137,7 +137,7 @@
     "topic": "Patterns",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/triangle-pattern-1662286395/1"
+    "gfg": null
   },
   {
     "title": "Pattern 15",
@@ -147,7 +147,7 @@
     "topic": "Patterns",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/triangle-pattern-1662286940/1"
+    "gfg": null
   },
   {
     "title": "Pattern 16",
@@ -157,7 +157,7 @@
     "topic": "Patterns",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/triangle-pattern-1662287212/1"
+    "gfg": null
   },
   {
     "title": "Pattern 17",
@@ -167,7 +167,7 @@
     "topic": "Patterns",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/triangle-pattern-1662287950/1"
+    "gfg": null
   },
   {
     "title": "Pattern 18",
@@ -177,7 +177,7 @@
     "topic": "Patterns",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/triangle-pattern-1662288011/1"
+    "gfg": null
   },
   {
     "title": "Pattern 19",
@@ -187,7 +187,7 @@
     "topic": "Patterns",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/double-triangle-pattern-1662287412/1"
+    "gfg": null
   },
   {
     "title": "Pattern 20",
@@ -207,7 +207,7 @@
     "topic": "Patterns",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/square-pattern-1662287679/1"
+    "gfg": null
   },
   {
     "title": "Pattern 22",
@@ -217,7 +217,7 @@
     "topic": "Patterns",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/square-pattern-1662288229/1"
+    "gfg": null
   },
   {
     "title": "Count Digits",
@@ -240,7 +240,7 @@
     "topic": "Basic Math",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/find-numbers-with-even-number-of-digits/",
-    "gfg": "https://www.geeksforgeeks.org/problems/count-odd-digits5765/1"
+    "gfg": null
   },
   {
     "title": "Reverse a Number",
@@ -277,7 +277,7 @@
     "topic": "Basic Math",
     "difficulty": "Easy",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/largest-digit-in-a-number/1"
+    "gfg": null
   },
   {
     "title": "Factorial of N numbers",
@@ -391,7 +391,7 @@
     "topic": "Basic Arrays",
     "difficulty": "Easy",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/sum-of-array-elements2510/1"
+    "gfg": null
   },
   {
     "title": "Count of odd numbers in Array",
@@ -432,7 +432,7 @@
     "topic": "Basic Hashing",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/frequency-of-the-most-frequent-element/",
-    "gfg": "https://www.geeksforgeeks.org/problems/maximum-repeating-number4802/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/maximum-repeating-number/1"
   },
   {
     "title": "Second Highest Occurring Element",
@@ -574,7 +574,7 @@
     "topic": "Basic Recursion",
     "difficulty": "Easy",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/sum-of-array-elements2510/1"
+    "gfg": null
   },
   {
     "title": "Reverse a String",
@@ -652,7 +652,7 @@
     "topic": "Basic Recursion",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/fibonacci-number/",
-    "gfg": "https://www.geeksforgeeks.org/problems/nth-fibonacci-number1359/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/nth-fibonacci-number/1"
   },
   {
     "title": "Selection Sort",
@@ -726,7 +726,7 @@
     "topic": "Arrays",
     "difficulty": "Easy",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/largest-element-in-array2846/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/largest-element-in-array/1"
   },
   {
     "title": "Second Largest Element in an Array without sorting",
@@ -749,7 +749,7 @@
     "topic": "Arrays - Easy",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/max-consecutive-ones/",
-    "gfg": "https://www.geeksforgeeks.org/problems/maximize-number-of-1s2122/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/maximize-number-of-1s/1"
   },
   {
     "title": "Rotate Array by K places",
@@ -827,7 +827,7 @@
     "topic": "Arrays",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/intersection-of-two-arrays/",
-    "gfg": "https://www.geeksforgeeks.org/problems/intersection-of-two-sorted-arrays-1587115620/1"
+    "gfg": null
   },
   {
     "title": "Majority Element (> n/2 times)",
@@ -939,7 +939,7 @@
     "topic": "Arrays - Medium",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/two-sum/",
-    "gfg": "https://www.geeksforgeeks.org/problems/key-pair5556/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/key-pair/1"
   },
   {
     "title": "3 Sum",
@@ -970,7 +970,7 @@
     "topic": "Arrays - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/sort-colors/",
-    "gfg": "https://www.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4242/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s/1"
   },
   {
     "title": "Maximum Subarray Sum (Kadane's Algorithm)",
@@ -1036,7 +1036,7 @@
     "topic": "Arrays - Hard",
     "difficulty": "Hard",
     "leetcode": "https://leetcode.com/problems/reverse-pairs/",
-    "gfg": "https://www.geeksforgeeks.org/problems/reverse-pairs/1"
+    "gfg": null
   },
   {
     "title": "Maximum Product Subarray",
@@ -1146,7 +1146,7 @@
     "topic": "Binary Search",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/search-insert-position/",
-    "gfg": "https://www.geeksforgeeks.org/problems/ceil-the-floor2824/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/ceil-the-floor/1"
   },
   {
     "title": "Floor and Ceil in Sorted Array",
@@ -1157,7 +1157,7 @@
     "topic": "Binary Search - 1D",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/search-insert-position/",
-    "gfg": "https://www.geeksforgeeks.org/problems/ceil-the-floor2824/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/ceil-the-floor/1"
   },
   {
     "title": "Floor and Ceil in Sorted Array",
@@ -1167,7 +1167,7 @@
     "topic": "Binary Search - 1D",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/search-insert-position/",
-    "gfg": "https://www.geeksforgeeks.org/problems/ceil-the-floor2824/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/ceil-the-floor/1"
   },
   {
     "title": "Count Occurrences in Sorted Array",
@@ -1436,7 +1436,7 @@
     "topic": "Binary Search - 2D",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/find-a-peak-element-ii/",
-    "gfg": "https://www.geeksforgeeks.org/problems/find-a-peak-element-ii/1"
+    "gfg": null
   },
   {
     "title": "Matrix Median",
@@ -1466,7 +1466,7 @@
     "topic": "Recursion",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/generate-parentheses/",
-    "gfg": "https://www.geeksforgeeks.org/problems/generate-all-balanced-parentheses/1"
+    "gfg": null
   },
   {
     "title": "Power Set",
@@ -1547,7 +1547,7 @@
     "topic": "Recursion",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/combination-sum-iii/",
-    "gfg": "https://www.geeksforgeeks.org/problems/combination-sum-iii/1"
+    "gfg": null
   },
   {
     "title": "Letter Combinations of a Phone Number",
@@ -1816,7 +1816,7 @@
     "topic": "LinkedList - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/odd-even-linked-list/",
-    "gfg": "https://www.geeksforgeeks.org/problems/segregate-even-and-odd-nodes-in-a-linked-list5033/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/segregate-even-and-odd-nodes-in-a-linked-list/1"
   },
   {
     "title": "Sort a Linked List of 0's 1's and 2's",
@@ -2063,7 +2063,7 @@
     "topic": "Bit Manipulation - Interview",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/single-number-ii/",
-    "gfg": "https://www.geeksforgeeks.org/problems/find-element-occuring-once-when-all-other-present-thrice/1"
+    "gfg": null
   },
   {
     "title": "Single Number III",
@@ -2231,7 +2231,7 @@
     "topic": "Greedy",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/valid-parenthesis-string/",
-    "gfg": "https://www.geeksforgeeks.org/problems/valid-parenthesis-string/1"
+    "gfg": null
   },
   {
     "title": "Candy",
@@ -2281,7 +2281,7 @@
     "topic": "Sliding Window",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/max-consecutive-ones-iii/",
-    "gfg": "https://www.geeksforgeeks.org/problems/maximize-number-of-1s2122/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/maximize-number-of-1s/1"
   },
   {
     "title": "Fruit Into Baskets",
@@ -2352,7 +2352,7 @@
     "topic": "Sliding Window",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/count-number-of-nice-subarrays/",
-    "gfg": "https://www.geeksforgeeks.org/problems/count-subarray-with-given-sum/1"
+    "gfg": null
   },
   {
     "title": "Subarrays with K Different Integers",
@@ -2590,7 +2590,7 @@
     "topic": "Design / Stack & Queues",
     "difficulty": "Hard",
     "leetcode": "https://leetcode.com/problems/lfu-cache/",
-    "gfg": "https://www.geeksforgeeks.org/problems/lfu-cache-1665050350/1"
+    "gfg": null
   },
   {
     "title": "Morris Preorder / Inorder Traversal",
@@ -3064,7 +3064,7 @@
     "topic": "BST",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/binary-search-tree-iterator/",
-    "gfg": "https://www.geeksforgeeks.org/problems/bst-iterator/1"
+    "gfg": null
   },
   {
     "title": "Two Sum IV - Input is a BST",
@@ -3156,7 +3156,7 @@
     "topic": "Theory and Implementation",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/convert-min-heap-to-max-heap/1"
+    "gfg": null
   },
   {
     "title": "Heap Sort",
@@ -3371,7 +3371,7 @@
     "topic": "Graphs - Topo Sort",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/course-schedule-ii/",
-    "gfg": "https://www.geeksforgeeks.org/problems/course-schedule-ii/1"
+    "gfg": null
   },
   {
     "title": "Alien Dictionary",
@@ -3457,7 +3457,7 @@
     "topic": "Shortest Path Algorithms",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
-    "gfg": "https://www.geeksforgeeks.org/problems/shortest-distance-in-a-binary-maze/1"
+    "gfg": null
   },
   {
     "title": "Path With Minimum Effort",
@@ -3525,7 +3525,7 @@
     "topic": "Graphs - Shortest Path",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/floyd-warshall4853/1"
+    "gfg": null
   },
   {
     "title": "Find the City With the Smallest Number of Neighbors at a Threshold Distance",
@@ -3914,7 +3914,7 @@
     "topic": "DP - Subsequences",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/coin-change-2/",
-    "gfg": "https://www.geeksforgeeks.org/problems/coin-change-minimum-number-of-coins/1"
+    "gfg": null
   },
   {
     "title": "Unbounded Knapsack",
@@ -3966,7 +3966,7 @@
     "topic": "DP - LIS",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/largest-divisible-subset/",
-    "gfg": "https://www.geeksforgeeks.org/problems/largest-divisible-subset/1"
+    "gfg": null
   },
   {
     "title": "Longest String Chain",
@@ -4149,7 +4149,7 @@
     "topic": "DP - Partition",
     "difficulty": "Hard",
     "leetcode": "https://leetcode.com/problems/minimum-cost-to-cut-a-stick/",
-    "gfg": "https://www.geeksforgeeks.org/problems/minimum-cost-to-cut-a-stick/1"
+    "gfg": null
   },
   {
     "title": "Evaluate Boolean Expression to True",
@@ -4160,7 +4160,7 @@
     "topic": "DP - Partition",
     "difficulty": "Hard",
     "leetcode": "https://leetcode.com/problems/parsing-a-boolean-expression/",
-    "gfg": "https://www.geeksforgeeks.org/problems/boolean-parenthesization5611/1"
+    "gfg": "https://www.geeksforgeeks.org/problems/boolean-parenthesization/1"
   },
   {
     "title": "Implement Trie II (Prefix Tree)",
@@ -4246,7 +4246,7 @@
     "topic": "Advanced Strings",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/",
-    "gfg": "https://www.geeksforgeeks.org/problems/minimum-add-to-make-parentheses-valid/1"
+    "gfg": null
   },
   {
     "title": "Count and Say",
@@ -4268,7 +4268,7 @@
     "topic": "Advanced Strings",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/repeated-string-match/",
-    "gfg": "https://www.geeksforgeeks.org/problems/repeated-string-match-1615467476/1"
+    "gfg": null
   },
   {
     "title": "Z function",
@@ -4278,7 +4278,7 @@
     "topic": "Advanced Problems (Less asked)",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/",
-    "gfg": "https://www.geeksforgeeks.org/problems/z-algorithm/1"
+    "gfg": null
   },
   {
     "title": "KMP Algorithm or LPS array",

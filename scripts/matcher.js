@@ -20,13 +20,14 @@
     if (!clean.startsWith('http://') && !clean.startsWith('https://')) return false;
 
     if (platform === 'leetcode') {
-      if (clean.includes('/problemset') || clean.includes('/search')) return false;
-      return clean.includes('leetcode.com/problems/');
+      // Disallow search query pages or problemset root, but allow problem slugs that start with 'search' (e.g. search-in-a-binary-search-tree)
+      if (clean.includes('/problemset/') || clean.includes('/search/?') || clean.includes('/search?')) return false;
+      return /^https?:\/\/(www\.)?leetcode\.com\/problems\/[a-z0-9-_]+/i.test(clean);
     }
 
     if (platform === 'gfg') {
-      if (clean.includes('/search/?') || clean.includes('/search?')) return false;
-      return clean.includes('geeksforgeeks.org/problems/') || clean.includes('practice.geeksforgeeks.org/problems/');
+      if (clean.includes('/search/?') || clean.includes('/search?') || clean.includes('/search/')) return false;
+      return /^https?:\/\/(www\.|practice\.)?geeksforgeeks\.org\/problems\/[a-z0-9-_]+/i.test(clean);
     }
 
     return true;
@@ -197,6 +198,16 @@
     'total', 'count', 'time', 'taken', 'make', 'node', 'nodes'
   ]);
 
+  // Section/category topic phrases that must never be fuzzy/subset matched into problems
+  const DSA_CATEGORY_PHRASES = new Set([
+    'bit manipulation', 'sliding window', 'two pointers', 'dynamic programming',
+    'linked list', 'doubly linked list', 'binary tree', 'trees',
+    'binary search tree', 'stack and queue', 'recursion', 'backtracking',
+    'greedy', 'graphs', 'graph', 'arrays', 'strings', 'matrix',
+    'sorting', 'searching', 'heaps', 'trie', 'advanced math', 'math',
+    'theory and basics', 'basics', 'introduction'
+  ]);
+
   class Matcher {
     constructor(problemsList = []) {
       this.problems = problemsList;
@@ -304,6 +315,9 @@
       const norm = normalizeTitle(rawTitle);
       if (!norm.key) return null;
 
+      // Reject purely numeric or rank-only queries (e.g., '10', '42', '#10')
+      if (/^\d+$/.test(norm.key) || /^\d+$/.test(norm.coreKey)) return null;
+
       // 1. Exact Match via full key or core key or number/word variations
       const queryVariations = [
         ...numberWordVariations(norm.key),
@@ -320,27 +334,36 @@
         }
       }
 
-      // 2. Substring matching (ranked by minimal length delta to prevent false positives)
+      // If query is a single short word or purely a DSA topic category phrase, do not perform fuzzy/substring matching
+      const words = norm.coreKey.split(' ').filter(Boolean);
+      if (words.length <= 1 || norm.coreKey.length < 6) {
+        return null;
+      }
+      if (DSA_CATEGORY_PHRASES.has(norm.coreKey) || DSA_CATEGORY_PHRASES.has(norm.key)) {
+        return null;
+      }
+
+      // 2. Substring matching (guarded against small queries or low coverage)
       let bestSubMatch = null;
       let minLengthDelta = Infinity;
 
       for (const entry of this.tokenIndex) {
-        const matchFound = 
-          entry.coreKey.includes(norm.coreKey) || 
-          norm.coreKey.includes(entry.coreKey) ||
-          entry.normKey.includes(norm.key) ||
-          norm.key.includes(entry.normKey);
-
-        if (matchFound) {
+        const isSubstring = entry.coreKey.includes(norm.coreKey) || norm.coreKey.includes(entry.coreKey);
+        if (isSubstring) {
+          const minLen = Math.min(entry.coreKey.length, norm.coreKey.length);
+          const maxLen = Math.max(entry.coreKey.length, norm.coreKey.length);
+          const coverage = minLen / maxLen;
           const delta = Math.abs(entry.normKey.length - norm.key.length);
-          if (delta < minLengthDelta) {
+
+          // Require >= 65% length coverage and small absolute delta to prevent matching generic sub-words
+          if (coverage >= 0.65 && delta <= 12 && delta < minLengthDelta) {
             minLengthDelta = delta;
             bestSubMatch = entry;
           }
         }
       }
 
-      if (bestSubMatch && minLengthDelta <= 20) {
+      if (bestSubMatch) {
         const lcDirect = isValidDirectProblemUrl(bestSubMatch.leetcode, 'leetcode') ? bestSubMatch.leetcode : null;
         const gfgDirect = isValidDirectProblemUrl(bestSubMatch.gfg, 'gfg') ? bestSubMatch.gfg : null;
         if (lcDirect || gfgDirect) {
@@ -348,12 +371,14 @@
         }
       }
 
-      // 3. Token Subset Matching (e.g. all search tokens are contained in problem's tokens)
+      // 3. Token Subset Matching (requires at least 2 meaningful search tokens AND significant coverage of target problem)
       const searchTokens = norm.coreKey.split(' ').filter(t => t.length > 2);
-      // Meaningful tokens exclude ultra-common stop words for fuzzy/subset matching
       const meaningfulSearchTokens = searchTokens.filter(t => !FUZZY_STOP_WORDS.has(t));
       if (meaningfulSearchTokens.length >= 2) {
         for (const entry of this.tokenIndex) {
+          const meaningfulEntryTokens = [...entry.tokens].filter(t => !FUZZY_STOP_WORDS.has(t));
+          if (meaningfulEntryTokens.length === 0) continue;
+
           let allPresent = true;
           for (const token of meaningfulSearchTokens) {
             if (!entry.tokens.has(token)) {
@@ -361,7 +386,8 @@
               break;
             }
           }
-          if (allPresent) {
+          // Must cover at least 60% of the problem's meaningful tokens to avoid matching on generic aliases
+          if (allPresent && (meaningfulSearchTokens.length / meaningfulEntryTokens.length >= 0.6)) {
             const lcDirect = isValidDirectProblemUrl(entry.leetcode, 'leetcode') ? entry.leetcode : null;
             const gfgDirect = isValidDirectProblemUrl(entry.gfg, 'gfg') ? entry.gfg : null;
             if (lcDirect || gfgDirect) {
@@ -371,13 +397,12 @@
         }
       }
 
-      // 4. Token Overlap / Fuzzy Match (using meaningful tokens only to avoid false positives)
+      // 4. Token Overlap / Fuzzy Match
       let bestTokenMatch = null;
       let highestScore = 0;
 
-      if (meaningfulSearchTokens.length > 0) {
+      if (meaningfulSearchTokens.length >= 2) {
         for (const entry of this.tokenIndex) {
-          // Filter entry tokens by stop words for fair comparison
           const meaningfulEntryTokens = [...entry.tokens].filter(t => !FUZZY_STOP_WORDS.has(t));
           if (meaningfulEntryTokens.length === 0) continue;
 
@@ -385,12 +410,10 @@
           for (const token of meaningfulSearchTokens) {
             if (entry.tokens.has(token)) commonCount++;
           }
-          // Require at least 2 meaningful tokens in common (or all if fewer)
-          const minRequired = Math.min(2, meaningfulSearchTokens.length);
-          if (commonCount < minRequired) continue;
+          if (commonCount < 2) continue;
 
           const score = (2 * commonCount) / (meaningfulSearchTokens.length + meaningfulEntryTokens.length);
-          if (score > highestScore && score >= 0.6) {
+          if (score > highestScore && score >= 0.7) {
             highestScore = score;
             bestTokenMatch = entry;
           }

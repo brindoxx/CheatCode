@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CheatCode - Striver Sheet LeetCode & GFG Links
 // @namespace    https://github.com/brindoxx/CheatCode
-// @version      2.0.0
+// @version      2.1.0
 // @description  Restores direct LeetCode and GeeksforGeeks buttons beside every problem on Striver's A2Z DSA Sheet (takeuforward.org).
 // @author       brindoxx
 // @match        *://takeuforward.org/*
