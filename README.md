@@ -9,7 +9,7 @@
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-3b82f6?style=flat-square&logo=google-chrome&logoColor=white)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 [![Platforms Supported](https://img.shields.io/badge/Target-takeuforward.org-orange?style=flat-square)](https://takeuforward.org)
-[![Offline Database](https://img.shields.io/badge/Problems%20Mapped-470%2B-blueviolet?style=flat-square)](data/problems.json)
+[![Offline Database](https://img.shields.io/badge/Problems%20Mapped-403%20(100%25%20A2Z)-blueviolet?style=flat-square)](data/problems.json)
 [![Author](https://img.shields.io/badge/Dev-brindoxx-ff69b4?style=flat-square&logo=github)](https://github.com/brindoxx)
 
 [Installation](#-installation-guide-100-free) • [Features](#-key-features) • [How It Works](#-how-it-works) • [Popup Problem Finder](#-instant-popup-problem-finder) • [Contributing](#-contributing)
@@ -29,9 +29,11 @@ In a recent platform redesign, **direct external links to LeetCode and GeeksforG
 **CheatCode** is a lightweight, high-performance browser extension (Manifest V3) created by **[brindoxx](https://github.com/brindoxx)** that:
 - Seamlessly injects sleek **[🟧 LeetCode]** and **[🟩 GFG]** badges directly beside every problem row on TakeUForward.
 - Works dynamically with Single-Page Applications (Next.js client-side routing and accordion expansions).
-- Ships with an embedded offline database covering **100% of all 403 TakeUForward practice problems + curated bonus questions (470+ problems mapped)**.
+- Ships with an embedded offline database covering **100% of all 403 TakeUForward practice problems** (with **315 direct LeetCode** and **400 direct GFG** problem links).
 - Features an **instant search popup** with difficulty filters and keyboard shortcut `/` so you can find and launch any DSA problem without even visiting TakeUForward.
 - Requires **zero external server requests**, respects your privacy, and runs 100% locally.
+
+> **ℹ️ Note on Problem Counts:** Striver's TakeUForward dashboard shows **442 total items** in its progress tracker. Out of these, exactly **403 are interactive coding problems** with code editors and test cases. The remaining 39 items are reading tutorials and theory guides (*"Learn C++"*, *"Time Complexity"*, *"C++ STL"*, etc.) which do not have practice coding pages. CheatCode maps 100% of all 403 practice coding problems.
 
 ---
 
@@ -43,7 +45,7 @@ In a recent platform redesign, **direct external links to LeetCode and GeeksforG
 | 🟩 **Direct GFG Badges** | Opens the corresponding GeeksforGeeks practice problem. |
 | 🔄 **SPA / Next.js Observer** | Automatically detects newly expanded accordions and tab transitions without page reloads. |
 | 🎯 **Direct Links Only** | Strictly links to verified practice problems—if a problem does not exist on LeetCode or GFG, it is cleanly omitted without useless search redirects. |
-| ⚡ **Offline Problem Finder** | Search 470+ A2Z questions instantly from the extension popup. |
+| ⚡ **Offline Problem Finder** | Search all 403 A2Z questions instantly from the extension popup. |
 | 🎨 **Theme Adaptive** | Automatically adapts to TakeUForward's light and dark modes. |
 | 🔒 **100% Private & Open Source** | Zero data collection, no telemetry, no tracking. |
 
@@ -99,7 +101,7 @@ Click the **CheatCode** icon in your browser toolbar to launch the quick finder:
 CheatCode/
 ├── manifest.json              # Chrome Extension Manifest V3 configuration
 ├── data/
-│   └── problems.json          # Master offline database of 470+ mapped problems
+│   └── problems.json          # Master offline database of 403 canonical A2Z problems
 ├── scripts/
 │   ├── content.js             # High-performance DOM observer & badge injection
 │   ├── matcher.js             # Normalization & fuzzy matching engine

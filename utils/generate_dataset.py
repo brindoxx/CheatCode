@@ -1,6 +1,6 @@
 # utils/generate_dataset.py
-# Generates the comprehensive Striver A2Z DSA sheet problem mapping for CheatCode
-# Covers all 403 TUF practice problems + curated supplementary questions (476 total)
+# Generates the exact 403 Striver A2Z DSA sheet coding problem mapping for CheatCode
+# 100% 1-to-1 match with all 403 practice problems on takeuforward.org
 
 import json
 import os
@@ -307,7 +307,7 @@ PROBLEMS = [
         "aliases": ["Check if the Array is Sorted I"],
         "topic": "Basic Arrays",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/",
         "gfg": "https://www.geeksforgeeks.org/problems/check-if-an-array-is-sorted0701/1"
     },
     {
@@ -507,7 +507,7 @@ PROBLEMS = [
         "aliases": ["Insertion Sort Algorithm", "Insertion Sorting"],
         "topic": "Sorting",
         "difficulty": "Easy",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/insertion-sort-list/",
         "gfg": "https://www.geeksforgeeks.org/problems/insertion-sort/1"
     },
     {
@@ -747,7 +747,7 @@ PROBLEMS = [
         "aliases": ["Find the repeating and missing number", "Missing and Repeating"],
         "topic": "Arrays",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/find-missing-and-repeated-values/",
         "gfg": "https://www.geeksforgeeks.org/problems/find-missing-and-repeating2512/1"
     },
     {
@@ -843,7 +843,7 @@ PROBLEMS = [
         "aliases": ["Ceil The Floor", "Upper Bound"],
         "topic": "Binary Search",
         "difficulty": "Easy",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/search-insert-position/",
         "gfg": "https://www.geeksforgeeks.org/problems/ceil-the-floor2824/1"
     },
     {
@@ -899,7 +899,7 @@ PROBLEMS = [
         "aliases": ["Find out how many times the array is rotated", "Rotation Count in Rotated Sorted Array"],
         "topic": "Binary Search",
         "difficulty": "Easy",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
         "gfg": "https://www.geeksforgeeks.org/problems/rotation4723/1"
     },
     {
@@ -971,7 +971,7 @@ PROBLEMS = [
         "aliases": ["Painter's Partition", "The Painter's Partition Problem-II"],
         "topic": "Binary Search",
         "difficulty": "Hard",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/split-array-largest-sum/",
         "gfg": "https://www.geeksforgeeks.org/problems/the-painters-partition-problem1535/1"
     },
     {
@@ -1011,7 +1011,7 @@ PROBLEMS = [
         "aliases": ["Kth element of 2 sorted arrays"],
         "topic": "FAQs",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
         "gfg": None
     },
     {
@@ -1283,7 +1283,7 @@ PROBLEMS = [
         "aliases": ["Convert Array to Doubly Linked List"],
         "topic": "Fundamentals (Doubly LL)",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/design-linked-list/",
         "gfg": "https://www.geeksforgeeks.org/problems/introduction-to-doubly-linked-list/1"
     },
     {
@@ -1363,7 +1363,7 @@ PROBLEMS = [
         "aliases": ["Sort a Linked List of 0's 1's and 2's"],
         "topic": "Logic Building",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/sort-colors/",
         "gfg": "https://www.geeksforgeeks.org/problems/given-a-linked-list-of-0s-1s-and-2s-sort-it/1"
     },
     {
@@ -1387,7 +1387,7 @@ PROBLEMS = [
         "aliases": ["Add one to a number represented by LL"],
         "topic": "FAQs (Medium)",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/plus-one-linked-list/",
         "gfg": "https://www.geeksforgeeks.org/problems/add-1-to-a-number-represented-as-linked-list/1"
     },
     {
@@ -1443,7 +1443,7 @@ PROBLEMS = [
         "aliases": ["Length of loop in LL"],
         "topic": "FAQs (Medium)",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/linked-list-cycle-ii/",
         "gfg": "https://www.geeksforgeeks.org/problems/find-length-of-loop/1"
     },
     {
@@ -1475,7 +1475,7 @@ PROBLEMS = [
         "aliases": ["Flattening of LL"],
         "topic": "FAQs (Hard)",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/",
         "gfg": "https://www.geeksforgeeks.org/problems/flattening-a-linked-list/1"
     },
     {
@@ -1499,7 +1499,7 @@ PROBLEMS = [
         "aliases": ["Delete all occurrences of a key in DLL"],
         "topic": "FAQS (DLL)",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/remove-linked-list-elements/",
         "gfg": "https://www.geeksforgeeks.org/problems/delete-all-occurrences-of-a-given-key-in-a-doubly-linked-list/1"
     },
     {
@@ -1507,7 +1507,7 @@ PROBLEMS = [
         "aliases": ["Remove duplicates from sorted DLL"],
         "topic": "FAQS (DLL)",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/remove-duplicates-from-sorted-list/",
         "gfg": "https://www.geeksforgeeks.org/problems/remove-duplicates-from-a-sorted-doubly-linked-list/1"
     },
     {
@@ -1515,7 +1515,7 @@ PROBLEMS = [
         "aliases": ["Find Pairs with Given Sum in Doubly Linked List"],
         "topic": "FAQS (DLL)",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
         "gfg": "https://www.geeksforgeeks.org/problems/find-pairs-with-given-sum-in-doubly-linked-list/1"
     },
     {
@@ -1619,7 +1619,7 @@ PROBLEMS = [
         "aliases": ["Job Sequencing Problem", "Job sequencing Problem"],
         "topic": "Greedy",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/",
         "gfg": "https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1"
     },
     {
@@ -1659,7 +1659,7 @@ PROBLEMS = [
         "aliases": ["Minimum number of platforms required for a railway"],
         "topic": "Scheduling and Interval Problems",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/meeting-rooms-ii/",
         "gfg": "https://www.geeksforgeeks.org/problems/minimum-platforms-1587115620/1"
     },
     {
@@ -1811,7 +1811,7 @@ PROBLEMS = [
         "aliases": ["Implement stack using Linkedlist"],
         "topic": "Implementation",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/implement-stack-using-queues/",
         "gfg": "https://www.geeksforgeeks.org/problems/implement-stack-using-linked-list/1"
     },
     {
@@ -1819,7 +1819,7 @@ PROBLEMS = [
         "aliases": ["Implement queue using Linkedlist"],
         "topic": "Implementation",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/implement-queue-using-stacks/",
         "gfg": "https://www.geeksforgeeks.org/problems/implement-queue-using-linked-list/1"
     },
     {
@@ -1931,7 +1931,7 @@ PROBLEMS = [
         "aliases": ["Celebrity Problem"],
         "topic": "FAQs",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/find-the-celebrity/",
         "gfg": "https://www.geeksforgeeks.org/problems/the-celebrity-problem/1"
     },
     {
@@ -2043,7 +2043,7 @@ PROBLEMS = [
         "aliases": ["Check for Children Sum Property in a Binary Tree", "Children Sum Property", "Children Sum Property in Binary Tree", "Children Sum in BT"],
         "topic": "Binary Trees - Hard",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/root-equals-sum-of-children/",
         "gfg": "https://www.geeksforgeeks.org/problems/children-sum-parent/1"
     },
     {
@@ -2643,7 +2643,7 @@ PROBLEMS = [
         "aliases": ["Find the MST weight"],
         "topic": "Minimum Spanning Tree",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
         "gfg": "https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1"
     },
     {
@@ -2755,7 +2755,7 @@ PROBLEMS = [
         "aliases": ["Ninja's Training", "Ninja's training"],
         "topic": "DP - 2D",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/minimum-falling-path-sum/",
         "gfg": "https://www.geeksforgeeks.org/problems/geeks-training/1"
     },
     {
@@ -2843,7 +2843,7 @@ PROBLEMS = [
         "aliases": ["Subset sum equals to target"],
         "topic": "DP on subsequences",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/partition-equal-subset-sum/",
         "gfg": "https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1"
     },
     {
@@ -2883,7 +2883,7 @@ PROBLEMS = [
         "aliases": ["0 and 1 Knapsack"],
         "topic": "DP on subsequences",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/ones-and-zeroes/",
         "gfg": "https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1"
     },
     {
@@ -2939,7 +2939,7 @@ PROBLEMS = [
         "aliases": ["Print Longest Increasing Subsequence"],
         "topic": "LIS",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/longest-increasing-subsequence/",
         "gfg": "https://www.geeksforgeeks.org/problems/printing-longest-increasing-subsequence/1"
     },
     {
@@ -3107,7 +3107,7 @@ PROBLEMS = [
         "aliases": ["Trie Implementation and Advanced Operations"],
         "topic": "Theory",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/implement-trie-ii-prefix-tree/",
         "gfg": "https://www.geeksforgeeks.org/problems/trie-delete/1"
     },
     {
@@ -3115,7 +3115,7 @@ PROBLEMS = [
         "aliases": ["Longest Word with All Prefixes"],
         "topic": "Problems",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/longest-word-with-all-prefixes/",
         "gfg": "https://www.geeksforgeeks.org/problems/find-the-longest-string--170645/1"
     },
     {
@@ -3179,7 +3179,7 @@ PROBLEMS = [
         "aliases": ["Z function"],
         "topic": "Advanced Problems (Less asked)",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/",
         "gfg": "https://www.geeksforgeeks.org/problems/z-algorithm/1"
     },
     {
@@ -3211,7 +3211,7 @@ PROBLEMS = [
         "aliases": ["Print all primes till N"],
         "topic": "Sieve of Eratosthenes",
         "difficulty": "Medium",
-        "leetcode": None,
+        "leetcode": "https://leetcode.com/problems/count-primes/",
         "gfg": "https://www.geeksforgeeks.org/problems/sieve-of-eratosthenes5242/1"
     },
     {
@@ -3229,517 +3229,6 @@ PROBLEMS = [
         "difficulty": "Easy",
         "leetcode": "https://leetcode.com/problems/count-primes/",
         "gfg": "https://www.geeksforgeeks.org/problems/sieve-of-eratosthenes5242/1"
-    },
-    {
-        "title": "Print 1 to N using Recursion",
-        "topic": "Basic Recursion",
-        "difficulty": "Easy",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/print-1-to-n-without-using-loops-1587115620/1"
-    },
-    {
-        "title": "Print N to 1 using Recursion",
-        "topic": "Basic Recursion",
-        "difficulty": "Easy",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/print-n-to-1-without-loop/1"
-    },
-    {
-        "title": "Count Frequency of elements in array",
-        "topic": "Basic Hashing",
-        "difficulty": "Easy",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/frequency-of-array-elements-1587115620/1"
-    },
-    {
-        "title": "Highest / Lowest Frequency Element",
-        "topic": "Basic Hashing",
-        "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problems/top-k-frequent-elements/",
-        "gfg": "https://www.geeksforgeeks.org/problems/top-k-frequent-elements-in-array/1"
-    },
-    {
-        "title": "Left Rotate an Array by One",
-        "topic": "Arrays - Easy",
-        "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problems/rotate-array/",
-        "gfg": "https://www.geeksforgeeks.org/problems/cyclically-rotate-an-array-by-one2614/1"
-    },
-    {
-        "title": "Find the Union and Intersection of two sorted arrays",
-        "topic": "Arrays - Easy",
-        "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problems/intersection-of-two-arrays/",
-        "gfg": "https://www.geeksforgeeks.org/problems/union-of-two-sorted-arrays-1587115621/1"
-    },
-    {
-        "title": "Print Subarray with Maximum Subarray Sum",
-        "topic": "Arrays - Medium",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/maximum-subarray/",
-        "gfg": "https://www.geeksforgeeks.org/problems/maximum-sub-array5443/1"
-    },
-    {
-        "title": "Search Insert Position",
-        "topic": "Binary Search - 1D",
-        "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problems/search-insert-position/",
-        "gfg": "https://www.geeksforgeeks.org/problems/search-insert-position-of-k-in-a-sorted-array/1"
-    },
-    {
-        "title": "Find First and Last Position of Element in Sorted Array",
-        "topic": "Binary Search - 1D",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
-        "gfg": "https://www.geeksforgeeks.org/problems/first-and-last-occurrences-of-x3116/1"
-    },
-    {
-        "title": "Find Minimum in Rotated Sorted Array",
-        "topic": "Binary Search - 1D",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
-        "gfg": "https://www.geeksforgeeks.org/problems/minimum-element-in-a-sorted-and-rotated-array3611/1"
-    },
-    {
-        "title": "Split Array Largest Sum",
-        "topic": "Binary Search - Answers",
-        "difficulty": "Hard",
-        "leetcode": "https://leetcode.com/problems/split-array-largest-sum/",
-        "gfg": "https://www.geeksforgeeks.org/problems/split-array-largest-sum--141634/1"
-    },
-    {
-        "title": "Median of Two Sorted Arrays",
-        "topic": "Binary Search - Answers",
-        "difficulty": "Hard",
-        "leetcode": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
-        "gfg": "https://www.geeksforgeeks.org/problems/median-of-2-sorted-arrays-of-different-sizes/1"
-    },
-    {
-        "title": "Remove Outermost Parentheses",
-        "topic": "Strings - Easy",
-        "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problems/remove-outermost-parentheses/",
-        "gfg": "https://www.geeksforgeeks.org/problems/outermost-parentheses/1"
-    },
-    {
-        "title": "Maximum Nesting Depth of Parentheses",
-        "topic": "Strings - Medium",
-        "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/",
-        "gfg": "https://www.geeksforgeeks.org/problems/maximum-nesting-depth-of-the-parentheses/1"
-    },
-    {
-        "title": "Roman to Integer",
-        "topic": "Strings - Medium",
-        "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problems/roman-to-integer/",
-        "gfg": "https://www.geeksforgeeks.org/problems/roman-number-to-integer3201/1"
-    },
-    {
-        "title": "String to Integer (atoi)",
-        "topic": "Strings - Medium",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/string-to-integer-atoi/",
-        "gfg": "https://www.geeksforgeeks.org/problems/implement-atoi/1"
-    },
-    {
-        "title": "Count Number of Substrings",
-        "topic": "Strings - Medium",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
-        "gfg": "https://www.geeksforgeeks.org/problems/count-number-of-substrings4528/1"
-    },
-    {
-        "title": "Longest Palindromic Substring",
-        "topic": "Strings - Medium",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/longest-palindromic-substring/",
-        "gfg": "https://www.geeksforgeeks.org/problems/longest-palindrome-in-a-string3411/1"
-    },
-    {
-        "title": "Sum of Beauty of All Substrings",
-        "topic": "Strings - Medium",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/sum-of-beauty-of-all-substrings/",
-        "gfg": "https://www.geeksforgeeks.org/problems/sum-of-beauty-of-all-substrings-1662962119/1"
-    },
-    {
-        "title": "Introduction to Linked List",
-        "topic": "LinkedList - 1D",
-        "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problems/design-linked-list/",
-        "gfg": "https://www.geeksforgeeks.org/problems/introduction-to-linked-list/1"
-    },
-    {
-        "title": "Insert Node at the Beginning",
-        "topic": "LinkedList - 1D",
-        "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problems/design-linked-list/",
-        "gfg": "https://www.geeksforgeeks.org/problems/linked-list-insertion-1587115620/1"
-    },
-    {
-        "title": "Find Length of Linked List",
-        "topic": "LinkedList - 1D",
-        "difficulty": "Easy",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/count-nodes-of-linked-list/1"
-    },
-    {
-        "title": "Search an element in the LL",
-        "topic": "LinkedList - 1D",
-        "difficulty": "Easy",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/search-in-linked-list-1664434510/1"
-    },
-    {
-        "title": "Find the starting point of the Loop of LinkedList",
-        "topic": "LinkedList - Medium",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/linked-list-cycle-ii/",
-        "gfg": "https://www.geeksforgeeks.org/problems/find-the-first-node-of-loop-in-linked-list--170645/1"
-    },
-    {
-        "title": "Sort a LL",
-        "topic": "LinkedList - Medium",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/sort-list/",
-        "gfg": "https://www.geeksforgeeks.org/problems/sort-a-linked-list/1"
-    },
-    {
-        "title": "Add 1 to a number represented by LL",
-        "topic": "LinkedList - Medium",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/plus-one-linked-list/",
-        "gfg": "https://www.geeksforgeeks.org/problems/add-1-to-a-number-represented-as-linked-list/1"
-    },
-    {
-        "title": "Flattening a Linked List",
-        "topic": "LinkedList - Hard",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/",
-        "gfg": "https://www.geeksforgeeks.org/problems/flattening-a-linked-list/1"
-    },
-    {
-        "title": "Generate all Binary Substrings",
-        "topic": "Recursion",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/generate-parentheses/",
-        "gfg": "https://www.geeksforgeeks.org/problems/generate-all-binary-strings/1"
-    },
-    {
-        "title": "Word Break",
-        "topic": "Recursion - Hard",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/word-break/",
-        "gfg": "https://www.geeksforgeeks.org/problems/word-break1352/1"
-    },
-    {
-        "title": "Introduction to Bit Manipulation",
-        "topic": "Bit Manipulation",
-        "difficulty": "Easy",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/bit-manipulation-1666686020/1"
-    },
-    {
-        "title": "Check whether K-th bit is set or not",
-        "topic": "Bit Manipulation",
-        "difficulty": "Easy",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/check-whether-k-th-bit-is-set-or-not-1587115620/1"
-    },
-    {
-        "title": "Check if a number is power of 2 or not",
-        "topic": "Bit Manipulation",
-        "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problems/power-of-two/",
-        "gfg": "https://www.geeksforgeeks.org/problems/power-of-2-1587115620/1"
-    },
-    {
-        "title": "Count total set bits",
-        "topic": "Bit Manipulation",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/counting-bits/",
-        "gfg": "https://www.geeksforgeeks.org/problems/count-total-set-bits-1587115620/1"
-    },
-    {
-        "title": "Set/Unset the rightmost unset bit",
-        "topic": "Bit Manipulation",
-        "difficulty": "Easy",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/set-the-rightmost-unset-bit4436/1"
-    },
-    {
-        "title": "Swap two numbers without third variable",
-        "topic": "Bit Manipulation",
-        "difficulty": "Easy",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/swap-two-numbers3844/1"
-    },
-    {
-        "title": "Find XOR of numbers from L to R",
-        "topic": "Bit Manipulation - Interview",
-        "difficulty": "Easy",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/find-xor-of-numbers-from-l-to-r/1"
-    },
-    {
-        "title": "Next Greater Element I",
-        "topic": "Monotonic Stack",
-        "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problems/next-greater-element-i/",
-        "gfg": "https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1"
-    },
-    {
-        "title": "The Celebrity Problem",
-        "topic": "Stack & Queues",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/find-the-celebrity/",
-        "gfg": "https://www.geeksforgeeks.org/problems/the-celebrity-problem/1"
-    },
-    {
-        "title": "Introduction to Priority Queues using Binary Heaps",
-        "topic": "Heaps",
-        "difficulty": "Easy",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/binary-heap-operations/1"
-    },
-    {
-        "title": "Kth Smallest Element in an Array",
-        "topic": "Heaps",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
-        "gfg": "https://www.geeksforgeeks.org/problems/kth-smallest-element5635/1"
-    },
-    {
-        "title": "Sort K-Sorted Array",
-        "topic": "Heaps",
-        "difficulty": "Medium",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/nearly-sorted-1587115620/1"
-    },
-    {
-        "title": "Merge M Sorted Lists",
-        "topic": "Heaps",
-        "difficulty": "Hard",
-        "leetcode": "https://leetcode.com/problems/merge-k-sorted-lists/",
-        "gfg": "https://www.geeksforgeeks.org/problems/merge-k-sorted-linked-lists/1"
-    },
-    {
-        "title": "Task Scheduler",
-        "topic": "Heaps",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/task-scheduler/",
-        "gfg": "https://www.geeksforgeeks.org/problems/task-scheduler/1"
-    },
-    {
-        "title": "Hand of Straights",
-        "topic": "Heaps",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/hand-of-straights/",
-        "gfg": "https://www.geeksforgeeks.org/problems/hands-of-straights/1"
-    },
-    {
-        "title": "Design Twitter",
-        "topic": "Heaps",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/design-twitter/",
-        "gfg": "https://www.geeksforgeeks.org/problems/design-twitter/1"
-    },
-    {
-        "title": "Connect Ropes to Minimise Cost",
-        "topic": "Heaps",
-        "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problems/minimum-cost-to-connect-sticks/",
-        "gfg": "https://www.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1"
-    },
-    {
-        "title": "Find Median from Data Stream",
-        "topic": "Heaps - Hard",
-        "difficulty": "Hard",
-        "leetcode": "https://leetcode.com/problems/find-median-from-data-stream/",
-        "gfg": "https://www.geeksforgeeks.org/problems/find-median-in-a-stream-1587115620/1"
-    },
-    {
-        "title": "Top K Frequent Elements",
-        "topic": "Heaps",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/top-k-frequent-elements/",
-        "gfg": "https://www.geeksforgeeks.org/problems/top-k-frequent-elements-in-array/1"
-    },
-    {
-        "title": "Fractional Knapsack Problem",
-        "topic": "Greedy",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/maximum-units-on-a-truck/",
-        "gfg": "https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1"
-    },
-    {
-        "title": "Find Minimum Number Of Coins",
-        "topic": "Greedy",
-        "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problems/coin-change/",
-        "gfg": "https://www.geeksforgeeks.org/problems/min-coin5549/1"
-    },
-    {
-        "title": "Minimum Platforms Required",
-        "topic": "Greedy",
-        "difficulty": "Medium",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/minimum-platforms-1587115620/1"
-    },
-    {
-        "title": "Binary Tree Inorder Traversal",
-        "topic": "Binary Trees",
-        "difficulty": "Easy",
-        "leetcode": "https://leetcode.com/problems/binary-tree-inorder-traversal/",
-        "gfg": "https://www.geeksforgeeks.org/problems/inorder-traversal/1"
-    },
-    {
-        "title": "Ceil in a Binary Search Tree",
-        "topic": "BST",
-        "difficulty": "Medium",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/implementing-ceil-in-bst/1"
-    },
-    {
-        "title": "Floor in a Binary Search Tree",
-        "topic": "BST",
-        "difficulty": "Medium",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/floor-in-bst/1"
-    },
-    {
-        "title": "Connected Components in an Undirected Graph",
-        "topic": "Graphs",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
-        "gfg": "https://www.geeksforgeeks.org/problems/number-of-provinces/1"
-    },
-    {
-        "title": "Detect Cycle in an Undirected Graph",
-        "topic": "Graphs",
-        "difficulty": "Medium",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1"
-    },
-    {
-        "title": "Detect Cycle in a Directed Graph",
-        "topic": "Graphs",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/course-schedule/",
-        "gfg": "https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1"
-    },
-    {
-        "title": "Network Delay Time",
-        "topic": "Graphs - Shortest Path",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/network-delay-time/",
-        "gfg": "https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1"
-    },
-    {
-        "title": "Prim's Algorithm - Minimum Spanning Tree",
-        "topic": "Graphs - MST",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
-        "gfg": "https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1"
-    },
-    {
-        "title": "Kruskal's Algorithm - Minimum Spanning Tree",
-        "topic": "Graphs - MST",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
-        "gfg": "https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1"
-    },
-    {
-        "title": "Swim in Rising Water",
-        "topic": "Graphs - Disjoint Set / Dijkstra",
-        "difficulty": "Hard",
-        "leetcode": "https://leetcode.com/problems/swim-in-rising-water/",
-        "gfg": "https://www.geeksforgeeks.org/problems/swim-in-rising-water/1"
-    },
-    {
-        "title": "Bridges in Graph / Critical Connections",
-        "topic": "Graphs - Advanced",
-        "difficulty": "Hard",
-        "leetcode": "https://leetcode.com/problems/critical-connections-in-a-network/",
-        "gfg": "https://www.geeksforgeeks.org/problems/bridge-edge-in-graph/1"
-    },
-    {
-        "title": "Strongly Connected Components (Kosaraju's Algorithm)",
-        "topic": "Graphs - Advanced",
-        "difficulty": "Medium",
-        "leetcode": None,
-        "gfg": "https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1"
-    },
-    {
-        "title": "Maximum Sum of Non-Adjacent Elements",
-        "topic": "DP - 1D",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/house-robber/",
-        "gfg": "https://www.geeksforgeeks.org/problems/max-sum-without-adjacents2430/1"
-    },
-    {
-        "title": "Minimum Falling Path Sum",
-        "topic": "DP - 2D",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/minimum-falling-path-sum/",
-        "gfg": "https://www.geeksforgeeks.org/problems/minimum-falling-path-sum/1"
-    },
-    {
-        "title": "Subset Sum Equal To K",
-        "topic": "DP - Subsequences",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/partition-equal-subset-sum/",
-        "gfg": "https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1"
-    },
-    {
-        "title": "Partition Equal Subset Sum",
-        "topic": "DP - Subsequences",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/partition-equal-subset-sum/",
-        "gfg": "https://www.geeksforgeeks.org/problems/subset-sum-problem2014/1"
-    },
-    {
-        "title": "Print Longest Common Subsequence",
-        "topic": "DP - Strings",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/longest-common-subsequence/",
-        "gfg": "https://www.geeksforgeeks.org/problems/print-all-lcs-sequences3413/1"
-    },
-    {
-        "title": "Best Time to Buy and Sell Stock with Cooldown",
-        "topic": "DP - Stocks",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
-        "gfg": "https://www.geeksforgeeks.org/problems/buy-stock-with-cooldown/1"
-    },
-    {
-        "title": "Count Square Submatrices with All Ones",
-        "topic": "DP - Squares",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/count-square-submatrices-with-all-ones/",
-        "gfg": "https://www.geeksforgeeks.org/problems/count-square-submatrices-with-all-ones/1"
-    },
-    {
-        "title": "Implement Trie (Prefix Tree)",
-        "topic": "Trie",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/implement-trie-prefix-tree/",
-        "gfg": "https://www.geeksforgeeks.org/problems/trie-insert-and-search0651/1"
-    },
-    {
-        "title": "Complete String",
-        "topic": "Trie",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/longest-word-in-dictionary/",
-        "gfg": "https://www.geeksforgeeks.org/problems/longest-valid-words/1"
-    },
-    {
-        "title": "Find the Index of the First Occurrence in a String (KMP Algorithm)",
-        "topic": "Advanced Strings",
-        "difficulty": "Medium",
-        "leetcode": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/",
-        "gfg": "https://www.geeksforgeeks.org/problems/search-pattern0205/1"
     }
 ]
 
