@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Update dynamic stats
     if (statTotal) statTotal.textContent = problemsData.length;
+    if (searchInput) searchInput.placeholder = `Search ${problemsData.length} Striver problems...`;
     if (statLc) {
       const lcCount = problemsData.filter(p => p.leetcode && p.leetcode.includes('leetcode.com/problems/')).length;
       statLc.textContent = lcCount;
