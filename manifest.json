@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "CheatCode - Striver Sheet LeetCode & GFG Restorer",
   "short_name": "CheatCode",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Restores direct LeetCode and GeeksforGeeks links beside every problem on Striver's A2Z DSA Sheet (takeuforward.org). Built by brindoxx.",
   "author": "brindoxx",
   "homepage_url": "https://github.com/brindoxx/CheatCode",

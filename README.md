@@ -6,6 +6,7 @@
 
 **Restore direct LeetCode & GeeksforGeeks practice links beside every problem on Striver's A2Z DSA Sheet.**
 
+[![Version](https://img.shields.io/badge/Version-v2.0.0-10b981?style=flat-square)](https://github.com/brindoxx/CheatCode/releases)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-3b82f6?style=flat-square&logo=google-chrome&logoColor=white)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 [![Platforms Supported](https://img.shields.io/badge/Target-takeuforward.org-orange?style=flat-square)](https://takeuforward.org)

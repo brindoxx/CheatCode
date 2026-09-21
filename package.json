@@ -1,6 +1,6 @@
 {
   "name": "cheatcode",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Chrome Extension that restores direct LeetCode and GeeksforGeeks links beside every problem on Striver's A2Z DSA Sheet.",
   "main": "scripts/content.js",
   "scripts": {
