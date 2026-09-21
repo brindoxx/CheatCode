@@ -86,6 +86,14 @@
 
     // Canonicalize standard DSA terminology differences between TUF, LeetCode, and GFG
     alphaKey = alphaKey
+      .replace(/\bzeroes\b/g, 'zeros')
+      .replace(/\bparanthes(is|es)\b/g, 'parentheses')
+      .replace(/\bparenthesis\b/g, 'parentheses')
+      .replace(/\bminimi[sz]e\b/g, 'minimize')
+      .replace(/\bmaximi[sz]e\b/g, 'maximize')
+      .replace(/\bbehaviou?r\b/g, 'behavior')
+      .replace(/\btraversals\b/g, 'traversal')
+      .replace(/\boccurrences\b/g, 'occurrence')
       .replace(/\bzig\s*zag\b/g, 'zigzag')
       .replace(/\brain\s*water\b/g, 'rainwater')
       .replace(/\bsub\s*intervals?\b/g, 'intervals')
