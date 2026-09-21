@@ -66,10 +66,11 @@
     clean = clean.replace(/^(\d+[\.\:\-]\s*)/, '');
     clean = clean.replace(/^([ivxlcdm]+[\.\:\-]\s*)/i, '');
 
-    // Remove common suffixes and badge tags: "[Medium]", "(Leetcode)", "Core", "FAQ", "Editorial"
-    clean = clean.replace(/\s*(\(|\[)(leetcode|gfg|codechef|interviewbit|easy|medium|hard|editorial)(\)|\])/gi, '');
+    // Remove common suffixes and badge tags: "[Medium]", "(Leetcode)", "Core", "Basic", "FAQ", "Editorial"
+    clean = clean.replace(/\s*(\(|\[)(leetcode|gfg|codechef|interviewbit|basic|easy|medium|hard|editorial)(\)|\])/gi, '');
     clean = clean.replace(/\s*\|\s*takeuforward.*$/i, '');
-    clean = clean.replace(/\s*\b(core|must do|starred|revision|optional|notes|faqs?|solved|unsolved)\b\s*$/gi, '');
+    clean = clean.replace(/(?:[\s_-]*|\b)(core|basic|easy|medium|hard|must do|starred|revision|optional|notes|faqs?|solved|unsolved)\s*$/gi, '');
+    clean = clean.replace(/^\s*(core|basic|easy|medium|hard|must do|starred|revision|optional|notes|faqs?|solved|unsolved)(?:[\s_-]*|\b)/gi, '');
 
     // Strip punctuation and reduce whitespace
     let alphaKey = clean
@@ -79,8 +80,9 @@
       .replace(/\s+/g, ' ')
       .trim();
 
-    // Strip trailing tags that may have had punctuation removed
-    alphaKey = alphaKey.replace(/\s*\b(core|must do|starred|revision|optional|notes|faqs?|solved|unsolved)\b\s*$/g, '').trim();
+    // Strip trailing or leading tags that may have had punctuation removed (handles both spaced and unspaced badges)
+    alphaKey = alphaKey.replace(/(?:[\s_-]*|\b)(core|basic|easy|medium|hard|must do|starred|revision|optional|notes|faqs?|solved|unsolved)\s*$/g, '').trim();
+    alphaKey = alphaKey.replace(/^\s*(core|basic|easy|medium|hard|must do|starred|revision|optional|notes|faqs?|solved|unsolved)(?:[\s_-]*|\b)/g, '').trim();
 
     // Canonicalize standard DSA terminology differences between TUF, LeetCode, and GFG
     alphaKey = alphaKey
@@ -178,6 +180,15 @@
     return vars;
   }
 
+  // Ultra-common words that cause false positive fuzzy matches
+  // These words appear in many unrelated titles and carry low discriminative value
+  const FUZZY_STOP_WORDS = new Set([
+    'number', 'numbers', 'array', 'arrays', 'two', 'given', 'using',
+    'return', 'maximum', 'minimum', 'from', 'with', 'all', 'one',
+    'first', 'last', 'between', 'into', 'without', 'within', 'till',
+    'total', 'count', 'time', 'taken', 'make', 'node', 'nodes'
+  ]);
+
   class Matcher {
     constructor(problemsList = []) {
       this.problems = problemsList;
@@ -194,7 +205,9 @@
     buildIndex() {
       this.exactIndex.clear();
       this.tokenIndex = [];
+      const entries = [];
 
+      // Create entries and token sets
       for (const p of this.problems) {
         const norm = normalizeTitle(p.title);
         if (!norm.key) continue;
@@ -206,8 +219,12 @@
           coreKey: norm.coreKey,
           tokens: new Set(norm.coreKey.split(' ').filter(t => t.length > 1))
         };
+        entries.push({ p, norm, entry });
+        this.tokenIndex.push(entry);
+      }
 
-        // 1. Primary Title (highest priority)
+      // PASS 1: Primary Titles (absolute highest priority — guaranteed never overwritten)
+      for (const { norm, entry } of entries) {
         const keysToIndex = [
           ...numberWordVariations(norm.key),
           ...numberWordVariations(norm.coreKey)
@@ -226,8 +243,10 @@
             this.exactIndex.set(strippedTree, entry);
           }
         }
+      }
 
-        // 2. Index explicit aliases from dataset
+      // PASS 2: Explicit aliases from dataset (higher priority than URL slugs)
+      for (const { p, entry } of entries) {
         if (Array.isArray(p.aliases)) {
           for (const alias of p.aliases) {
             const aNorm = normalizeTitle(alias);
@@ -241,8 +260,10 @@
             }
           }
         }
+      }
 
-        // 3. Extract and index slugs from LeetCode & GFG URLs
+      // PASS 3: Fallback slugs from LeetCode & GFG URLs (lowest priority, never clobber actual titles)
+      for (const { p, entry } of entries) {
         const lcSlug = extractProblemSlug(p.leetcode);
         if (lcSlug) {
           const sNorm = normalizeTitle(lcSlug);
@@ -268,8 +289,6 @@
             gNorm.coreKey.split(' ').filter(t => t.length > 1).forEach(t => entry.tokens.add(t));
           }
         }
-
-        this.tokenIndex.push(entry);
       }
     }
 
@@ -323,10 +342,12 @@
 
       // 3. Token Subset Matching (e.g. all search tokens are contained in problem's tokens)
       const searchTokens = norm.coreKey.split(' ').filter(t => t.length > 2);
-      if (searchTokens.length >= 2) {
+      // Meaningful tokens exclude ultra-common stop words for fuzzy/subset matching
+      const meaningfulSearchTokens = searchTokens.filter(t => !FUZZY_STOP_WORDS.has(t));
+      if (meaningfulSearchTokens.length >= 2) {
         for (const entry of this.tokenIndex) {
           let allPresent = true;
-          for (const token of searchTokens) {
+          for (const token of meaningfulSearchTokens) {
             if (!entry.tokens.has(token)) {
               allPresent = false;
               break;
@@ -342,18 +363,26 @@
         }
       }
 
-      // 4. Token Overlap / Fuzzy Match
+      // 4. Token Overlap / Fuzzy Match (using meaningful tokens only to avoid false positives)
       let bestTokenMatch = null;
       let highestScore = 0;
 
-      if (searchTokens.length > 0) {
+      if (meaningfulSearchTokens.length > 0) {
         for (const entry of this.tokenIndex) {
+          // Filter entry tokens by stop words for fair comparison
+          const meaningfulEntryTokens = [...entry.tokens].filter(t => !FUZZY_STOP_WORDS.has(t));
+          if (meaningfulEntryTokens.length === 0) continue;
+
           let commonCount = 0;
-          for (const token of searchTokens) {
+          for (const token of meaningfulSearchTokens) {
             if (entry.tokens.has(token)) commonCount++;
           }
-          const score = (2 * commonCount) / (searchTokens.length + entry.tokens.size);
-          if (score > highestScore && score >= 0.5) {
+          // Require at least 2 meaningful tokens in common (or all if fewer)
+          const minRequired = Math.min(2, meaningfulSearchTokens.length);
+          if (commonCount < minRequired) continue;
+
+          const score = (2 * commonCount) / (meaningfulSearchTokens.length + meaningfulEntryTokens.length);
+          if (score > highestScore && score >= 0.6) {
             highestScore = score;
             bestTokenMatch = entry;
           }

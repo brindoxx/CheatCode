@@ -1,6 +1,11 @@
 [
   {
     "title": "Count Digits",
+    "aliases": [
+      "Count all Digits of a Number",
+      "Count the number of digits",
+      "Count Digits in a Number"
+    ],
     "topic": "Basic Math",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/find-numbers-with-even-number-of-digits/",
@@ -8,6 +13,10 @@
   },
   {
     "title": "Reverse a Number",
+    "aliases": [
+      "Reverse a number",
+      "Reverse Integer"
+    ],
     "topic": "Basic Math",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/reverse-integer/",
@@ -15,6 +24,11 @@
   },
   {
     "title": "Check Palindrome",
+    "aliases": [
+      "Palindrome Number",
+      "Check if a Number is Palindrome",
+      "Palindrome number"
+    ],
     "topic": "Basic Math",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/palindrome-number/",
@@ -22,6 +36,12 @@
   },
   {
     "title": "GCD Or HCF",
+    "aliases": [
+      "GCD of Two Numbers",
+      "Greatest Common Divisor",
+      "Find GCD",
+      "GCD of two numbers"
+    ],
     "topic": "Basic Math",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/find-greatest-common-divisor-of-array/",
@@ -29,6 +49,11 @@
   },
   {
     "title": "Armstrong Numbers",
+    "aliases": [
+      "Check if the Number is Armstrong",
+      "Armstrong Number",
+      "Check Armstrong"
+    ],
     "topic": "Basic Math",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/armstrong-number/",
@@ -36,6 +61,11 @@
   },
   {
     "title": "Print all Divisors",
+    "aliases": [
+      "Divisors of a Number",
+      "Find all Divisors",
+      "All Divisors of a Number"
+    ],
     "topic": "Basic Math",
     "difficulty": "Easy",
     "leetcode": null,
@@ -43,10 +73,67 @@
   },
   {
     "title": "Check for Prime",
+    "aliases": [
+      "Check for Prime Number",
+      "Prime Number Check",
+      "Check Prime"
+    ],
     "topic": "Basic Math",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/count-primes/",
     "gfg": "https://www.geeksforgeeks.org/problems/prime-number2314/1"
+  },
+  {
+    "title": "Count number of odd digits in a number",
+    "topic": "Basic Math",
+    "difficulty": "Easy",
+    "leetcode": "https://leetcode.com/problems/find-numbers-with-even-number-of-digits/",
+    "gfg": "https://www.geeksforgeeks.org/problems/count-odd-digits5765/1"
+  },
+  {
+    "title": "Return the Largest Digit in a Number",
+    "aliases": [
+      "Largest Digit in a Number",
+      "Find Largest Digit"
+    ],
+    "topic": "Basic Math",
+    "difficulty": "Easy",
+    "leetcode": null,
+    "gfg": "https://www.geeksforgeeks.org/problems/largest-digit-in-a-number/1"
+  },
+  {
+    "title": "Check for Perfect Number",
+    "aliases": [
+      "Perfect Number",
+      "Check Perfect Number"
+    ],
+    "topic": "Basic Math",
+    "difficulty": "Easy",
+    "leetcode": "https://leetcode.com/problems/perfect-number/",
+    "gfg": "https://www.geeksforgeeks.org/problems/perfect-numbers3207/1"
+  },
+  {
+    "title": "LCM of two numbers",
+    "aliases": [
+      "LCM of Two Numbers",
+      "Find LCM"
+    ],
+    "topic": "Basic Math",
+    "difficulty": "Easy",
+    "leetcode": null,
+    "gfg": "https://www.geeksforgeeks.org/problems/lcm-and-gcd4516/1"
+  },
+  {
+    "title": "Count of Prime Numbers till N",
+    "aliases": [
+      "Count Primes",
+      "Sieve of Eratosthenes",
+      "Count Prime Numbers till N"
+    ],
+    "topic": "Basic Math",
+    "difficulty": "Easy",
+    "leetcode": "https://leetcode.com/problems/count-primes/",
+    "gfg": "https://www.geeksforgeeks.org/problems/sieve-of-eratosthenes5242/1"
   },
   {
     "title": "Print 1 to N using Recursion",
@@ -71,6 +158,11 @@
   },
   {
     "title": "Factorial of N numbers",
+    "aliases": [
+      "Factorial of a given number",
+      "Find Factorial",
+      "Factorial of a number"
+    ],
     "topic": "Basic Recursion",
     "difficulty": "Easy",
     "leetcode": null,
@@ -115,14 +207,14 @@
     "title": "Selection Sort",
     "topic": "Sorting Techniques",
     "difficulty": "Easy",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/sort-an-array/",
     "gfg": "https://www.geeksforgeeks.org/problems/selection-sort/1"
   },
   {
     "title": "Bubble Sort",
     "topic": "Sorting Techniques",
     "difficulty": "Easy",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/sort-an-array/",
     "gfg": "https://www.geeksforgeeks.org/problems/bubble-sort/1"
   },
   {
@@ -143,11 +235,15 @@
     "title": "Quick Sort",
     "topic": "Sorting Techniques",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/sort-an-array/",
     "gfg": "https://www.geeksforgeeks.org/problems/quick-sort/1"
   },
   {
     "title": "Largest Element in an Array",
+    "aliases": [
+      "Largest Element in Array",
+      "Find the Largest Element in an Array"
+    ],
     "topic": "Arrays - Easy",
     "difficulty": "Easy",
     "leetcode": null,
@@ -155,6 +251,11 @@
   },
   {
     "title": "Second Largest Element in an Array without sorting",
+    "aliases": [
+      "Second Largest Element in an Array",
+      "Second Largest in Array",
+      "Find Second Largest"
+    ],
     "topic": "Arrays - Easy",
     "difficulty": "Easy",
     "leetcode": null,
@@ -178,7 +279,7 @@
     "title": "Left Rotate an Array by One",
     "topic": "Arrays - Easy",
     "difficulty": "Easy",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/rotate-array/",
     "gfg": "https://www.geeksforgeeks.org/problems/cyclically-rotate-an-array-by-one2614/1"
   },
   {
@@ -242,11 +343,7 @@
     "topic": "Arrays - Medium",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/two-sum/",
-    "gfg": "https://www.geeksforgeeks.org/problems/key-pair5556/1",
-    "aliases": [
-      "Two Sum",
-      "2 Sum"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/key-pair5556/1"
   },
   {
     "title": "Sort an array of 0s, 1s and 2s",
@@ -264,6 +361,12 @@
   },
   {
     "title": "Maximum Subarray Sum (Kadane's Algorithm)",
+    "aliases": [
+      "Maximum Subarray Sum",
+      "Kadane's Algorithm",
+      "Kadanes Algorithm",
+      "Max Subarray Sum"
+    ],
     "topic": "Arrays - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/maximum-subarray/",
@@ -316,13 +419,15 @@
     "topic": "Arrays - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/set-matrix-zeroes/",
-    "gfg": "https://www.geeksforgeeks.org/problems/set-matrix-zeroes/1",
-    "aliases": [
-      "Set Matrix Zeros"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/set-matrix-zeroes/1"
   },
   {
     "title": "Rotate Image / Matrix by 90 degrees",
+    "aliases": [
+      "Rotate Matrix",
+      "Rotate Image",
+      "Rotate Matrix by 90 degrees"
+    ],
     "topic": "Arrays - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/rotate-image/",
@@ -382,33 +487,25 @@
     "topic": "Arrays - Hard",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/count-subarray-with-given-xor/1",
-    "aliases": [
-      "Subarray with given XOR",
-      "Subarrays with given XOR"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/count-subarray-with-given-xor/1"
   },
   {
     "title": "Merge Overlapping Subintervals",
+    "aliases": [
+      "Merge Overlapping Intervals",
+      "Merge Intervals"
+    ],
     "topic": "Arrays - Hard",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/merge-intervals/",
-    "gfg": "https://www.geeksforgeeks.org/problems/overlapping-intervals--170633/1",
-    "aliases": [
-      "Merge Intervals",
-      "Overlapping Intervals"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/overlapping-intervals--170633/1"
   },
   {
     "title": "Merge Two Sorted Arrays Without Extra Space",
     "topic": "Arrays - Hard",
     "difficulty": "Hard",
     "leetcode": "https://leetcode.com/problems/merge-sorted-array/",
-    "gfg": "https://www.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1",
-    "aliases": [
-      "Merge Two Sorted Arrays",
-      "Merge Sorted Array"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1"
   },
   {
     "title": "Find the Missing and Repeating Number",
@@ -421,7 +518,7 @@
     "title": "Count Inversions",
     "topic": "Arrays - Hard",
     "difficulty": "Hard",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/reverse-pairs/",
     "gfg": "https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1"
   },
   {
@@ -484,7 +581,7 @@
     "title": "Count Occurrences in Sorted Array",
     "topic": "Binary Search - 1D",
     "difficulty": "Easy",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
     "gfg": "https://www.geeksforgeeks.org/problems/number-of-occurrence2259/1"
   },
   {
@@ -512,7 +609,7 @@
     "title": "Find how many times array has been rotated",
     "topic": "Binary Search - 1D",
     "difficulty": "Easy",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
     "gfg": "https://www.geeksforgeeks.org/problems/rotation4723/1"
   },
   {
@@ -589,7 +686,7 @@
     "title": "Book Allocation Problem",
     "topic": "Binary Search - Answers",
     "difficulty": "Hard",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/split-array-largest-sum/",
     "gfg": "https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1"
   },
   {
@@ -603,7 +700,7 @@
     "title": "Painter's Partition Problem",
     "topic": "Binary Search - Answers",
     "difficulty": "Hard",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/split-array-largest-sum/",
     "gfg": "https://www.geeksforgeeks.org/problems/the-painters-partition-problem1535/1"
   },
   {
@@ -617,7 +714,7 @@
     "title": "K-th Element of Two Sorted Arrays",
     "topic": "Binary Search - Answers",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
     "gfg": "https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1"
   },
   {
@@ -736,7 +833,7 @@
     "title": "Count Number of Substrings",
     "topic": "Strings - Medium",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
     "gfg": "https://www.geeksforgeeks.org/problems/count-number-of-substrings4528/1"
   },
   {
@@ -764,7 +861,7 @@
     "title": "Insert Node at the Beginning",
     "topic": "LinkedList - 1D",
     "difficulty": "Easy",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/design-linked-list/",
     "gfg": "https://www.geeksforgeeks.org/problems/linked-list-insertion-1587115620/1"
   },
   {
@@ -804,6 +901,11 @@
   },
   {
     "title": "Detect a Loop in LL",
+    "aliases": [
+      "Detect Loop in Linked List",
+      "Detect Cycle in Linked List",
+      "Linked List Cycle"
+    ],
     "topic": "LinkedList - Medium",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/linked-list-cycle/",
@@ -814,23 +916,14 @@
     "topic": "LinkedList - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/linked-list-cycle-ii/",
-    "gfg": "https://www.geeksforgeeks.org/problems/find-the-first-node-of-loop-in-linked-list--170645/1",
-    "aliases": [
-      "Find the starting point of Loop in LinkedList",
-      "Starting point of loop in LL",
-      "Linked List Cycle II"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/find-the-first-node-of-loop-in-linked-list--170645/1"
   },
   {
     "title": "Length of Loop in Linked List",
     "topic": "LinkedList - Medium",
     "difficulty": "Easy",
-    "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/find-length-of-loop/1",
-    "aliases": [
-      "Find the length of Loop in LinkedList",
-      "Length of Loop in LL"
-    ]
+    "leetcode": "https://leetcode.com/problems/linked-list-cycle-ii/",
+    "gfg": "https://www.geeksforgeeks.org/problems/find-length-of-loop/1"
   },
   {
     "title": "Check if LL is Palindrome",
@@ -865,17 +958,13 @@
     "topic": "LinkedList - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/sort-list/",
-    "gfg": "https://www.geeksforgeeks.org/problems/sort-a-linked-list/1",
-    "aliases": [
-      "Sort Linked List",
-      "Sort List"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/sort-a-linked-list/1"
   },
   {
     "title": "Sort a LL of 0's 1's and 2's",
     "topic": "LinkedList - Medium",
     "difficulty": "Easy",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/sort-list/",
     "gfg": "https://www.geeksforgeeks.org/problems/given-a-linked-list-of-0s-1s-and-2s-sort-it/1"
   },
   {
@@ -931,7 +1020,7 @@
     "title": "Generate all Binary Substrings",
     "topic": "Recursion",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/generate-parentheses/",
     "gfg": "https://www.geeksforgeeks.org/problems/generate-all-binary-strings/1"
   },
   {
@@ -966,7 +1055,7 @@
     "title": "Subset Sum : Sum of all Subsets",
     "topic": "Recursion",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/subsets/",
     "gfg": "https://www.geeksforgeeks.org/problems/subset-sums2234/1"
   },
   {
@@ -1120,14 +1209,14 @@
     "title": "Implement Stack using Arrays",
     "topic": "Stack and Queues",
     "difficulty": "Easy",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/implement-stack-using-queues/",
     "gfg": "https://www.geeksforgeeks.org/problems/implement-stack-using-array/1"
   },
   {
     "title": "Implement Queue using Arrays",
     "topic": "Stack and Queues",
     "difficulty": "Easy",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/implement-queue-using-stacks/",
     "gfg": "https://www.geeksforgeeks.org/problems/implement-queue-using-array/1"
   },
   {
@@ -1176,7 +1265,7 @@
     "title": "Next Smaller Element",
     "topic": "Monotonic Stack",
     "difficulty": "Easy",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/next-greater-element-i/",
     "gfg": "https://www.geeksforgeeks.org/problems/immediate-smaller-element1142/1"
   },
   {
@@ -1184,10 +1273,7 @@
     "topic": "Monotonic Stack",
     "difficulty": "Hard",
     "leetcode": "https://leetcode.com/problems/trapping-rain-water/",
-    "gfg": "https://www.geeksforgeeks.org/problems/trapping-rain-water-1587115621/1",
-    "aliases": [
-      "Trapping Rainwater"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/trapping-rain-water-1587115621/1"
   },
   {
     "title": "Sum of Subarray Minimums",
@@ -1361,7 +1447,7 @@
     "title": "Kth Smallest Element in an Array",
     "topic": "Heaps",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
     "gfg": "https://www.geeksforgeeks.org/problems/kth-smallest-element5635/1"
   },
   {
@@ -1445,7 +1531,7 @@
     "title": "Find Minimum Number Of Coins",
     "topic": "Greedy",
     "difficulty": "Easy",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/coin-change/",
     "gfg": "https://www.geeksforgeeks.org/problems/min-coin5549/1"
   },
   {
@@ -1466,7 +1552,7 @@
     "title": "N meetings in one room",
     "topic": "Greedy",
     "difficulty": "Easy",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/non-overlapping-intervals/",
     "gfg": "https://www.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1"
   },
   {
@@ -1544,35 +1630,21 @@
     "topic": "Binary Trees - Medium",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/height-of-binary-tree/1",
-    "aliases": [
-      "Height of Binary Tree",
-      "Height of BT",
-      "Max Depth of Binary Tree",
-      "Maximum Depth of BT"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/height-of-binary-tree/1"
   },
   {
     "title": "Balanced Binary Tree",
     "topic": "Binary Trees - Medium",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/balanced-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/check-for-balanced-tree/1",
-    "aliases": [
-      "Check for Balanced Binary Tree",
-      "Check if BT is balanced",
-      "Balanced BT"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/check-for-balanced-tree/1"
   },
   {
     "title": "Diameter of Binary Tree",
     "topic": "Binary Trees - Medium",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/diameter-of-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/diameter-of-binary-tree/1",
-    "aliases": [
-      "Diameter of BT"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/diameter-of-binary-tree/1"
   },
   {
     "title": "Binary Tree Maximum Path Sum",
@@ -1586,165 +1658,152 @@
     "topic": "Binary Trees - Medium",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/same-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/determine-if-two-trees-are-identical/1",
-    "aliases": [
-      "Check if two trees are identical",
-      "Check for Identical Trees",
-      "Identical Trees"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/determine-if-two-trees-are-identical/1"
   },
   {
     "title": "Binary Tree Zigzag Level Order Traversal",
+    "aliases": [
+      "Zig Zag or Spiral Traversal",
+      "Zigzag Traversal",
+      "Spiral Traversal of BT",
+      "Zigzag Level Order Traversal"
+    ],
     "topic": "Binary Trees - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/",
-    "gfg": "https://www.geeksforgeeks.org/problems/zigzag-tree-traversal/1",
-    "aliases": [
-      "Zig Zag Traversal",
-      "Zig-Zag Traversal",
-      "Zig Zag Traversal of Binary Tree",
-      "Zigzag Tree Traversal",
-      "Zig Zag or Spiral Traversal",
-      "Spiral Traversal"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/zigzag-tree-traversal/1"
   },
   {
     "title": "Boundary Traversal of Binary Tree",
+    "aliases": [
+      "Boundary Traversal",
+      "Boundary Traversal of BT"
+    ],
     "topic": "Binary Trees - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/boundary-of-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1",
-    "aliases": [
-      "Boundary Traversal",
-      "Tree Boundary Traversal",
-      "Boundary of Binary Tree"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1"
   },
   {
     "title": "Vertical Order Traversal of a Binary Tree",
+    "aliases": [
+      "Vertical Order Traversal",
+      "Vertical Order Traversal of BT"
+    ],
     "topic": "Binary Trees - Medium",
     "difficulty": "Hard",
     "leetcode": "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/1",
-    "aliases": [
-      "Vertical Order Traversal",
-      "Vertical Traversal of Binary Tree",
-      "Vertical Traversal of a Binary Tree",
-      "Print a Binary Tree in Vertical Order"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/1"
   },
   {
     "title": "Top View of Binary Tree",
+    "aliases": [
+      "Top View of BT"
+    ],
     "topic": "Binary Trees - Medium",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1",
-    "aliases": [
-      "Top View of BT",
-      "Top View"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1"
   },
   {
     "title": "Bottom View of Binary Tree",
+    "aliases": [
+      "Bottom view of BT",
+      "Bottom View of BT"
+    ],
     "topic": "Binary Trees - Medium",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1",
-    "aliases": [
-      "Bottom view of BT",
-      "Bottom View of BT",
-      "Bottom View"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1"
   },
   {
     "title": "Right/Left View of Binary Tree",
-    "topic": "Binary Trees - Medium",
-    "difficulty": "Medium",
-    "leetcode": "https://leetcode.com/problems/binary-tree-right-side-view/",
-    "gfg": "https://www.geeksforgeeks.org/problems/right-view-of-binary-tree/1",
     "aliases": [
       "Right/Left View of BT",
       "Right View of BT",
       "Left View of BT",
-      "Right View of Binary Tree",
-      "Left View of Binary Tree",
-      "Binary Tree Right Side View"
-    ]
+      "Right Side View of Binary Tree"
+    ],
+    "topic": "Binary Trees - Medium",
+    "difficulty": "Medium",
+    "leetcode": "https://leetcode.com/problems/binary-tree-right-side-view/",
+    "gfg": "https://www.geeksforgeeks.org/problems/right-view-of-binary-tree/1"
   },
   {
     "title": "Symmetric Tree",
     "topic": "Binary Trees - Medium",
     "difficulty": "Easy",
     "leetcode": "https://leetcode.com/problems/symmetric-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/symmetric-tree/1",
-    "aliases": [
-      "Check for Symmetrical BT",
-      "Check for Symmetric Tree",
-      "Symmetric Binary Tree"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/symmetric-tree/1"
   },
   {
     "title": "Root to Node Path in Binary Tree",
+    "aliases": [
+      "Print root to leaf path in BT",
+      "Root to Leaf Path",
+      "Root to leaf path in Binary Tree"
+    ],
     "topic": "Binary Trees - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/binary-tree-paths/",
-    "gfg": "https://www.geeksforgeeks.org/problems/root-to-leaf-paths/1",
-    "aliases": [
-      "Print root to leaf path in BT",
-      "Root to leaf path in BT",
-      "Root to Leaf Paths",
-      "Print root to leaf path in Binary Tree",
-      "Binary Tree Paths"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/root-to-leaf-paths/1"
   },
   {
     "title": "Lowest Common Ancestor of a Binary Tree",
+    "aliases": [
+      "LCA in BT",
+      "LCA in Binary Tree",
+      "LCA of Binary Tree"
+    ],
     "topic": "Binary Trees - Medium",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-binary-tree/1",
-    "aliases": [
-      "LCA in BT",
-      "LCA of Binary Tree",
-      "Lowest Common Ancestor in Binary Tree",
-      "LCA in Binary Tree"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-binary-tree/1"
   },
   {
     "title": "Maximum Width of Binary Tree",
+    "aliases": [
+      "Maximum Width of BT",
+      "Max Width of Binary Tree"
+    ],
     "topic": "Binary Trees - Hard",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/maximum-width-of-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/maximum-width-of-tree/1",
-    "aliases": [
-      "Maximum Width of BT",
-      "Width of Binary Tree"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/maximum-width-of-tree/1"
   },
   {
     "title": "Children Sum Property in Binary Tree",
+    "aliases": [
+      "Children Sum Property",
+      "Children Sum in BT",
+      "Check for Children Sum Property in a Binary Tree"
+    ],
     "topic": "Binary Trees - Hard",
     "difficulty": "Medium",
     "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/children-sum-parent/1",
-    "aliases": [
-      "Check for Children Sum Property",
-      "Children Sum Parent"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/children-sum-parent/1"
   },
   {
     "title": "All Nodes Distance K in Binary Tree",
+    "aliases": [
+      "Print all nodes at a distance of K in BT",
+      "Nodes at Distance K",
+      "Print all nodes at distance K in Binary Tree"
+    ],
     "topic": "Binary Trees - Hard",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/nodes-at-given-distance-in-binary-tree/1",
-    "aliases": [
-      "Print all the Nodes at a distance of K in Binary Tree",
-      "Nodes at distance K in Binary Tree"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/nodes-at-given-distance-in-binary-tree/1"
   },
   {
     "title": "Burning Tree",
+    "aliases": [
+      "Minimum time taken to burn the BT from a given Node",
+      "Time to Burn Tree",
+      "Burning Binary Tree",
+      "Burn BT",
+      "Amount of Time for Binary Tree to Be Infected"
+    ],
     "topic": "Binary Trees - Hard",
     "difficulty": "Hard",
     "leetcode": "https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/",
@@ -1752,45 +1811,36 @@
   },
   {
     "title": "Count Complete Tree Nodes",
+    "aliases": [
+      "Count total nodes in a complete BT",
+      "Count total nodes in complete Binary Tree",
+      "Count Nodes in Complete Binary Tree"
+    ],
     "topic": "Binary Trees - Hard",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/count-complete-tree-nodes/",
-    "gfg": "https://www.geeksforgeeks.org/problems/count-number-of-nodes-in-a-binary-tree/1",
-    "aliases": [
-      "Count total Nodes in a COMPLETE Binary Tree"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/count-number-of-nodes-in-a-binary-tree/1"
   },
   {
     "title": "Construct Binary Tree from Preorder and Inorder Traversal",
     "topic": "Binary Trees - Hard",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
-    "gfg": "https://www.geeksforgeeks.org/problems/construct-tree-1/1",
-    "aliases": [
-      "Construct BT from Preorder and Inorder",
-      "Construct Binary Tree from Preorder and Inorder"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/construct-tree-1/1"
   },
   {
     "title": "Construct Binary Tree from Inorder and Postorder Traversal",
     "topic": "Binary Trees - Hard",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/",
-    "gfg": "https://www.geeksforgeeks.org/problems/tree-from-postorder-and-inorder/1",
-    "aliases": [
-      "Construct BT from Inorder and Postorder",
-      "Construct Binary Tree from Inorder and Postorder"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/tree-from-postorder-and-inorder/1"
   },
   {
     "title": "Serialize and Deserialize Binary Tree",
     "topic": "Binary Trees - Hard",
     "difficulty": "Hard",
     "leetcode": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/serialize-and-deserialize-a-binary-tree/1",
-    "aliases": [
-      "Serialize and De-serialize Binary Tree"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/serialize-and-deserialize-a-binary-tree/1"
   },
   {
     "title": "Morris Preorder / Inorder Traversal",
@@ -1801,14 +1851,15 @@
   },
   {
     "title": "Flatten Binary Tree to Linked List",
+    "aliases": [
+      "Flatten Binary Tree to Linked List",
+      "Flatten BT to LL",
+      "Flatten a Binary Tree to Linked List"
+    ],
     "topic": "Binary Trees - Hard",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/flatten-binary-tree-to-linked-list/",
-    "gfg": "https://www.geeksforgeeks.org/problems/flatten-binary-tree-to-linked-list/1",
-    "aliases": [
-      "Flatten Binary Tree to LinkedList",
-      "Flatten BT to LL"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/flatten-binary-tree-to-linked-list/1"
   },
   {
     "title": "Search in a Binary Search Tree",
@@ -1850,13 +1901,7 @@
     "topic": "BST",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
-    "gfg": "https://www.geeksforgeeks.org/problems/find-k-th-smallest-element-in-bst/1",
-    "aliases": [
-      "Kth Smallest Element in BST",
-      "Kth Largest Element in BST",
-      "Find Kth Smallest Element in BST",
-      "Find Kth Largest Element in BST"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/find-k-th-smallest-element-in-bst/1"
   },
   {
     "title": "Validate Binary Search Tree",
@@ -1867,14 +1912,15 @@
   },
   {
     "title": "Lowest Common Ancestor of a Binary Search Tree",
+    "aliases": [
+      "LCA in BST",
+      "LCA of BST",
+      "LCA in Binary Search Tree"
+    ],
     "topic": "BST",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
-    "gfg": "https://www.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-bst/1",
-    "aliases": [
-      "LCA in BST",
-      "Lowest Common Ancestor in BST"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-bst/1"
   },
   {
     "title": "Construct Binary Search Tree from Preorder Traversal",
@@ -1920,6 +1966,10 @@
   },
   {
     "title": "Number of Provinces",
+    "aliases": [
+      "Connected Components",
+      "Find Number of Provinces"
+    ],
     "topic": "Graphs",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/number-of-provinces/",
@@ -1999,7 +2049,7 @@
     "title": "Detect Cycle in a Directed Graph",
     "topic": "Graphs",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/course-schedule/",
     "gfg": "https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1"
   },
   {
@@ -2062,7 +2112,7 @@
     "title": "Prim's Algorithm - Minimum Spanning Tree",
     "topic": "Graphs - MST",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
     "gfg": "https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1"
   },
   {
@@ -2112,17 +2162,13 @@
     "topic": "Graphs - Advanced",
     "difficulty": "Hard",
     "leetcode": "https://leetcode.com/problems/critical-connections-in-a-network/",
-    "gfg": "https://www.geeksforgeeks.org/problems/bridge-edge-in-graph/1",
-    "aliases": [
-      "Bridges in Graph",
-      "Critical Connections in a Network"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/bridge-edge-in-graph/1"
   },
   {
     "title": "Articulation Point in Graph",
     "topic": "Graphs - Advanced",
     "difficulty": "Hard",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/critical-connections-in-a-network/",
     "gfg": "https://www.geeksforgeeks.org/problems/articulation-point-1/1"
   },
   {
@@ -2150,14 +2196,14 @@
     "title": "Frog Jump with k distances",
     "topic": "DP - 1D",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/frog-jump/",
     "gfg": "https://www.geeksforgeeks.org/problems/minimal-cost/1"
   },
   {
     "title": "Maximum Sum of Non-Adjacent Elements",
     "topic": "DP - 1D",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/house-robber/",
     "gfg": "https://www.geeksforgeeks.org/problems/max-sum-without-adjacents2430/1"
   },
   {
@@ -2227,7 +2273,7 @@
     "title": "Subset Sum Equal To K",
     "topic": "DP - Subsequences",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/partition-equal-subset-sum/",
     "gfg": "https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1"
   },
   {
@@ -2255,14 +2301,14 @@
     "title": "Count Partitions with Given Difference",
     "topic": "DP - Subsequences",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/target-sum/",
     "gfg": "https://www.geeksforgeeks.org/problems/partitions-with-given-difference/1"
   },
   {
     "title": "0/1 Knapsack",
     "topic": "DP - Subsequences",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/partition-equal-subset-sum/",
     "gfg": "https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1"
   },
   {
@@ -2290,7 +2336,7 @@
     "title": "Unbounded Knapsack",
     "topic": "DP - Subsequences",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/coin-change-ii/",
     "gfg": "https://www.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1"
   },
   {
@@ -2305,16 +2351,13 @@
     "topic": "DP - Strings",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/longest-common-subsequence/",
-    "gfg": "https://www.geeksforgeeks.org/problems/longest-common-subsequence-1587115620/1",
-    "aliases": [
-      "LCS"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/longest-common-subsequence-1587115620/1"
   },
   {
     "title": "Print Longest Common Subsequence",
     "topic": "DP - Strings",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/longest-common-subsequence/",
     "gfg": "https://www.geeksforgeeks.org/problems/print-all-lcs-sequences3413/1"
   },
   {
@@ -2413,10 +2456,7 @@
     "topic": "DP - LIS",
     "difficulty": "Medium",
     "leetcode": "https://leetcode.com/problems/longest-increasing-subsequence/",
-    "gfg": "https://www.geeksforgeeks.org/problems/longest-increasing-subsequence-1587115620/1",
-    "aliases": [
-      "LIS"
-    ]
+    "gfg": "https://www.geeksforgeeks.org/problems/longest-increasing-subsequence-1587115620/1"
   },
   {
     "title": "Largest Divisible Subset",
@@ -2450,11 +2490,8 @@
     "title": "Matrix Chain Multiplication",
     "topic": "DP - Partition",
     "difficulty": "Hard",
-    "leetcode": null,
-    "gfg": "https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1",
-    "aliases": [
-      "MCM"
-    ]
+    "leetcode": "https://leetcode.com/problems/burst-balloons/",
+    "gfg": "https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1"
   },
   {
     "title": "Minimum Cost to Cut a Stick",
@@ -2509,7 +2546,7 @@
     "title": "Implement Trie II (Prefix Tree)",
     "topic": "Trie",
     "difficulty": "Medium",
-    "leetcode": null,
+    "leetcode": "https://leetcode.com/problems/implement-trie-prefix-tree/",
     "gfg": "https://www.geeksforgeeks.org/problems/trie-delete/1"
   },
   {

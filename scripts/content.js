@@ -119,7 +119,7 @@
 
   // Ignored common labels/texts and badge strings
   const IGNORED_STRINGS = new Set([
-    'easy', 'medium', 'hard', 'solved', 'unsolved', 'revision', 'notes',
+    'easy', 'medium', 'hard', 'basic', 'solved', 'unsolved', 'revision', 'notes',
     'status', 'problem', 'practice', 'editorial', 'submission', 'bookmark',
     'youtube', 'code', 'c++', 'java', 'python', 'javascript', 'submit', 'run',
     'dashboard', 'planly', 'prep hub', 'community', 'blogs', 'codespace',
@@ -143,7 +143,7 @@
       return;
     }
 
-    const titleCandidates = row.querySelectorAll('a, p, span, h3, h4');
+    const titleCandidates = row.querySelectorAll('span[class*="problemLabel"], td[data-label="Problem"] div, a, p, span, h3, h4');
     let matchedEl = null;
     let matchInfo = null;
 
@@ -153,7 +153,7 @@
       // Strategy A: If element has an href, extract problem slug
       const href = el.getAttribute('href');
       if (href) {
-        const slugMatch = href.match(/(?:problems|data-structure)\/([a-z0-9-_]+)/i);
+        const slugMatch = href.match(/(?:problems|data-structure|practice\/dsa)\/([a-z0-9-_]+)/i);
         if (slugMatch && slugMatch[1]) {
           const slugText = slugMatch[1].replace(/[-_]+/g, ' ');
           const found = matcher.find(slugText);
@@ -166,12 +166,28 @@
       }
 
       // Strategy B: Inspect element textContent
-      const rawTxt = el.textContent.trim();
+      // If element has child elements with difficulty badges, prune them for clean title extraction
+      let rawTxt = '';
+      if (el.children.length > 0) {
+        const clone = el.cloneNode(true);
+        clone.querySelectorAll('[class*="Badge"], [class*="badge"], span, div').forEach(child => {
+          const cTxt = child.textContent.trim().toLowerCase();
+          if (IGNORED_STRINGS.has(cTxt) || /^(core|basic|easy|medium|hard|solved|unsolved)$/i.test(cTxt)) {
+            child.remove();
+          }
+        });
+        rawTxt = clone.textContent.trim();
+      }
+      if (!rawTxt) {
+        rawTxt = el.textContent.trim();
+      }
+
       if (rawTxt && !isIgnoredText(rawTxt) && rawTxt.length >= 3 && rawTxt.length <= 140) {
-        // Strip out trailing or leading status/badge tags like "Core", "Solved", "Unsolved", etc.
+        // Strip out trailing or leading status/badge tags like "Core", "Basic", "Solved", "Easy", etc.
+        // Handles both spaced ("Traversal Core") and unspaced ("TraversalCore") concatenations
         const cleanedTxt = rawTxt
-          .replace(/\s*\b(core|must do|starred|revision|optional|notes|faqs?|solved|unsolved)\b\s*$/gi, '')
-          .replace(/^\s*\b(core|must do|starred|revision|optional|notes|faqs?|solved|unsolved)\b\s*/gi, '')
+          .replace(/(?:[\s_-]*|\b)(core|basic|easy|medium|hard|must do|starred|revision|optional|notes|faqs?|solved|unsolved)\s*$/gi, '')
+          .replace(/^\s*(core|basic|easy|medium|hard|must do|starred|revision|optional|notes|faqs?|solved|unsolved)(?:[\s_-]*|\b)/gi, '')
           .replace(/\s+/g, ' ')
           .trim();
 
@@ -186,7 +202,14 @@
       }
     }
 
-    if (!matchedEl || !matchInfo) return;
+    if (!matchedEl || !matchInfo) {
+      // Debug: log unmatched rows to help identify remaining gaps
+      const firstText = row.querySelector('a, p, span, h3, h4')?.textContent?.trim();
+      if (firstText && firstText.length > 5 && firstText.length < 100 && !isIgnoredText(firstText)) {
+        console.debug(`[CheatCode] No match for: "${firstText.substring(0, 80)}"`);
+      }
+      return;
+    }
 
     const badgeContainer = createBadgeContainer(matchInfo);
     if (!badgeContainer) return;
@@ -211,6 +234,9 @@
 
     // Potential problem rows across different TUF layouts
     const selectors = [
+      'tr[data-sheet-row-key]',
+      'tr[class*="contentTableRow"]',
+      'tr[data-row-type="practice"]',
       'table tbody tr',
       'div[role="row"]',
       'div[class*="table_row"]',
