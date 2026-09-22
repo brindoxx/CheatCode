@@ -13,26 +13,33 @@
 [![Offline Database](https://img.shields.io/badge/Problems%20Mapped-403%20(100%25%20A2Z)-blueviolet?style=flat-square)](data/problems.json)
 [![Author](https://img.shields.io/badge/Dev-brindoxx-ff69b4?style=flat-square&logo=github)](https://github.com/brindoxx)
 
-[Installation](#-installation-guide-100-free) • [Features](#-key-features) • [How It Works](#-how-it-works) • [Popup Problem Finder](#-instant-popup-problem-finder) • [Contributing](#-contributing)
+[Installation](#-installation-guide-100-free) • [Features](#-key-features) • [Why CheatCode?](#-why-cheatcode) • [Popup Problem Finder](#-instant-popup-problem-finder) • [Contributing](#-contributing)
 
 </div>
 
 ---
 
-## 🎯 The Problem
+## 🎯 Why CheatCode?
 
-When preparing for campus placements and technical interviews, thousands of developers rely on **Striver's A2Z DSA Sheet** hosted on [takeuforward.org](https://takeuforward.org). 
+When preparing for campus placements and technical interviews, thousands of developers rely on **Striver's A2Z DSA Sheet** hosted on [takeuforward.org](https://takeuforward.org).
 
-In a recent platform redesign, **direct external links to LeetCode and GeeksforGeeks were removed from problem sheets** in favor of internal site features. Learners who want to maintain their LeetCode streaks, run test cases against LeetCode's judge, or view company tags on GFG are left manually copying problem names into Google every time.
+### 💡 Current State of TakeUForward
+TakeUForward recently restored direct LeetCode links for many problems on their platform. However, key gaps remain:
+- 🟩 **GeeksforGeeks (GFG) links are still NOT added:** TUF still does not offer direct GeeksforGeeks links. For campus placement preparation, company-tagged questions, and alternative practice environments, GFG remains indispensable for students.
+- 🟧 **Missing & incomplete LeetCode links:** Several problems on TUF still lack direct LeetCode links or direct problem mappings.
+- ⚡ **Nested navigation friction:** Finding and jumping to a specific problem still requires expanding multiple steps and accordions on TUF.
+
+---
 
 ## 🚀 The Solution: CheatCode
 
-**CheatCode** is a lightweight, high-performance browser extension (Manifest V3) created by **[brindoxx](https://github.com/brindoxx)** that:
-- Seamlessly injects sleek **[🟧 LeetCode]** and **[🟩 GFG]** badges directly beside every problem row on TakeUForward.
-- Works dynamically with Single-Page Applications (Next.js client-side routing and accordion expansions).
-- Ships with an embedded offline database covering **100% of all 403 TakeUForward practice problems** (with **315 direct LeetCode** and **400 direct GFG** problem links).
-- Features an **instant search popup** with difficulty filters and keyboard shortcut `/` so you can find and launch any DSA problem without even visiting TakeUForward.
-- Requires **zero external server requests**, respects your privacy, and runs 100% locally.
+**CheatCode** is a lightweight, high-performance browser extension (Manifest V3) created by **[brindoxx](https://github.com/brindoxx)** that bridges every gap:
+- **Complete GeeksforGeeks Coverage**: Injects **400 verified direct GFG links** across the sheet where TUF has none.
+- **LeetCode Gap Filler**: Ensures canonical LeetCode links (**315 mapped problems**) even for questions where TUF's links are missing or omitted.
+- **Unified Dual-Badge UI**: Seamlessly injects sleek **[🟧 LeetCode]** and **[🟩 GFG]** badges directly beside every problem row on TakeUForward.
+- **Instant Search Popup (`/`)**: Built-in popup search lets you find and launch any A2Z question in milliseconds without even navigating TakeUForward.
+- **Dynamic SPA Support**: Automatically detects newly expanded accordions and tab transitions without page reloads.
+- **100% Offline & Private**: Zero external server calls, zero telemetry, lightning-fast execution.
 
 > **ℹ️ Note on Problem Counts:** Striver's TakeUForward dashboard shows **442 total items** in its progress tracker. Out of these, exactly **403 are interactive coding problems** with code editors and test cases. The remaining 39 items are reading tutorials and theory guides (*"Learn C++"*, *"Time Complexity"*, *"C++ STL"*, etc.) which do not have practice coding pages. CheatCode maps 100% of all 403 practice coding problems.
 
@@ -42,11 +49,11 @@ In a recent platform redesign, **direct external links to LeetCode and GeeksforG
 
 | Feature | Description |
 |---|---|
-| 🟧 **Direct LeetCode Badges** | Opens the exact canonical LeetCode problem with 1 click. |
-| 🟩 **Direct GFG Badges** | Opens the corresponding GeeksforGeeks practice problem. |
+| 🟩 **Complete GFG Links** | Injects 400 verified direct GeeksforGeeks practice links (which TUF still does not provide). |
+| 🟧 **LeetCode Gap Filler** | Provides direct LeetCode links, including questions where TUF's links are missing. |
 | 🔄 **SPA / Next.js Observer** | Automatically detects newly expanded accordions and tab transitions without page reloads. |
-| 🎯 **Direct Links Only** | Strictly links to verified practice problems—if a problem does not exist on LeetCode or GFG, it is cleanly omitted without useless search redirects. |
-| ⚡ **Offline Problem Finder** | Search all 403 A2Z questions instantly from the extension popup. |
+| 🎯 **Direct Links Only** | Strictly links to verified practice problems—if a problem does not exist on a platform, it is cleanly omitted without useless search redirects. |
+| ⚡ **Offline Problem Finder** | Search all 403 A2Z questions instantly from the extension popup (hotkey `/`). |
 | 🎨 **Theme Adaptive** | Automatically adapts to TakeUForward's light and dark modes. |
 | 🔒 **100% Private & Open Source** | Zero data collection, no telemetry, no tracking. |
 
